@@ -5,4 +5,4 @@ dist/
 # 클라이언트 빌드 전 중간 결과물 
 .client-entry-scripts
 
-*.lock
+yarn.lock
