@@ -1,0 +1,8 @@
+# 패키지 매니저 
+node_modules/
+# 최종 빌드 결과물
+dist/
+# 클라이언트 빌드 전 중간 결과물 
+.client-entry-scripts
+
+.lock

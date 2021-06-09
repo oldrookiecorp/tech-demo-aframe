@@ -1,0 +1,11 @@
+Model Information:
+* title:	Delivery Balloon
+* source:	https://sketchfab.com/3d-models/delivery-balloon-67854fd4a02c4dbbb9b7301f5cd8b1e5
+* author:	frankenst1 (https://sketchfab.com/frankenst1)
+
+Model License:
+* license type:	CC0-1.0 (http://creativecommons.org/publicdomain/zero/1.0/)
+* requirements:	Credit is not mandatory. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Delivery Balloon" (https://sketchfab.com/3d-models/delivery-balloon-67854fd4a02c4dbbb9b7301f5cd8b1e5) by frankenst1 (https://sketchfab.com/frankenst1) licensed under CC0-1.0 (http://creativecommons.org/publicdomain/zero/1.0/)
