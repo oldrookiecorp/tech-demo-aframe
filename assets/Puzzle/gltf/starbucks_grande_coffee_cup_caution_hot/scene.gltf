@@ -1,0 +1,302 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 9186,
+      "max": [
+        20.740499496459961,
+        21.054370880126953,
+        21.15431022644043
+      ],
+      "min": [
+        -20.191120147705078,
+        -19.877239227294922,
+        -50.960929870605469
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 110232,
+      "componentType": 5126,
+      "count": 9186,
+      "max": [
+        0.99955141544342041,
+        0.99912190437316895,
+        1
+      ],
+      "min": [
+        -0.99912190437316895,
+        -0.99912190437316895,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 9186,
+      "max": [
+        0.99996507167816162,
+        0.99991714954376221,
+        0.99826884269714355,
+        1
+      ],
+      "min": [
+        -0.99997639656066895,
+        -0.99996489286422729,
+        -0.99911504983901978,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 220464,
+      "componentType": 5126,
+      "count": 9186,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        0.99607843160629272,
+        0.99607843160629272,
+        0.99607843160629272
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 9186,
+      "max": [
+        0.97877997159957886,
+        0.99522000551223755
+      ],
+      "min": [
+        0.010169999673962593,
+        0.01331000030040741
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 51888,
+      "max": [
+        9185
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Slime103 (https://sketchfab.com/slime103)",
+      "license": "CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)",
+      "source": "https://sketchfab.com/models/adf1013df0d24037a506cd9708ddbc28",
+      "title": "Starbucks Grande Coffee Cup (Caution HOT!)"
+    },
+    "generator": "Sketchfab-3.18.7",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 207552,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 73488,
+      "byteOffset": 207552,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 330696,
+      "byteOffset": 281040,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 146976,
+      "byteOffset": 611736,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 758712,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/starbuckscup2_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "starbuckscup2",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "starbuckscup2_0",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 3,
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 4
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.12253000000000001,
+        -0.044870000000000014,
+        0,
+        0,
+        0.044870000000000014,
+        0.12253000000000001,
+        0,
+        0,
+        0,
+        0,
+        0.13048000000000001,
+        0,
+        0,
+        0,
+        6.7051299999999996,
+        1
+      ],
+      "name": "starbuckscup2"
+    },
+    {
+      "mesh": 0,
+      "name": "starbuckscup2_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        0.94468000000000008,
+        -0.32799000000000006,
+        0,
+        0,
+        0.14989000000000002,
+        0.43171000000000004,
+        0.88947000000000009,
+        0,
+        -0.29174,
+        -0.84027000000000007,
+        0.45699000000000001,
+        0,
+        -4.5657199999999998,
+        -9.2259799999999998,
+        9.8532300000000017,
+        1
+      ],
+      "name": "Sun.001"
+    },
+    {
+      "name": "Sun.001"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}
+
