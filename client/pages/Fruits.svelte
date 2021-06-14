@@ -4,6 +4,4 @@
   export const fileName = "Fruits";
 </script>
 
-<Menu />
-
 <h1>Fruits</h1>
