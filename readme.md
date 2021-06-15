@@ -69,4 +69,4 @@ SSR 서버를 실행합니다.
 ## Contributors
 
 - [박기홍](https://github.com/gihong2012) 
-- [유경수](https://github.com/yoogomja) [메일](mailto://dev.yoogomja@gmail.com)
+- [유경수](https://github.com/yoogomja) ([메일](mailto://dev.yoogomja@gmail.com))
