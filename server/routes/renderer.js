@@ -2,6 +2,7 @@ const renderPage = (head, body, jsFilename, data) => {
   return `
 	<html>
 		<head>
+		<meta charset="utf-8">
 			<script>
 				const HYDRATION_DATA = ${JSON.stringify(data)}
 			</script>

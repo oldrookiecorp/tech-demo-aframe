@@ -1,12 +1,15 @@
 <script context = "module">
   import GameObject from "../entities/GameObject.svelte";
-import GameUi from "../entities/GameUi.svelte";
+  import GameUi from "../entities/GameUi.svelte";
   import Room from "../entities/Room.svelte";
   export const fileName = "Puzzle";
+
+
 
 </script>
 <svelte:head>
   <script>
+
      AFRAME.registerComponent("start-timer", {
         init: function () {
             this.el.addEventListener("click", function (evt) {
@@ -117,6 +120,7 @@ import GameUi from "../entities/GameUi.svelte";
         <img id="sky" src="assets/Puzzle/environment/sky.jpg" />
 
         <a-asset-item id="npc"src="assets/Puzzle/gltf/isabelle_animal_crossing/scene.gltf"/>
+
     </a-assets>
     <GameUi/>
     <a-sky src="#sky"></a-sky>
@@ -141,6 +145,12 @@ import GameUi from "../entities/GameUi.svelte";
     <a-camera position="20 1.5 15">
         <a-cursor color="red"></a-cursor>
     </a-camera>
+    <!-- <a-gltf-model 
+    src="assets/Puzzle/gltf/장스탠드/장스탠드.gltf" 
+    mixin="shadow"
+    position="25 -6 5"
+    id="stand"
+    /> -->
     <a-gltf-model 
     src="#npc" 
     cursor-listener

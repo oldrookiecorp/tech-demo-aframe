@@ -1,0 +1,306 @@
+{
+    "asset": {
+        "copyright": "2020 (c) Adobe Inc.",
+        "generator": "Adobe Dimension - 695fff5264e3b00eaca24d3119e0b5e4c864ae29",
+        "version": "2.0"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "componentType": 5126,
+            "count": 5253,
+            "type": "VEC3",
+            "max": [
+                1.274999976158142,
+                12.149999618530274,
+                1.274999976158142
+            ],
+            "min": [
+                -1.274999976158142,
+                0.0,
+                -1.274999976158142
+            ]
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 5253,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 5253,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5125,
+            "count": 16416,
+            "type": "SCALAR",
+            "max": [
+                3038.0
+            ],
+            "min": [
+                0.0
+            ]
+        },
+        {
+            "bufferView": 4,
+            "componentType": 5125,
+            "count": 8883,
+            "type": "SCALAR",
+            "max": [
+                5252.0
+            ],
+            "min": [
+                2861.0
+            ]
+        },
+        {
+            "bufferView": 5,
+            "componentType": 5125,
+            "count": 288,
+            "type": "SCALAR",
+            "max": [
+                3164.0
+            ],
+            "min": [
+                2921.0
+            ]
+        },
+        {
+            "bufferView": 6,
+            "componentType": 5125,
+            "count": 1248,
+            "type": "SCALAR",
+            "max": [
+                3399.0
+            ],
+            "min": [
+                2985.0
+            ]
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 63036,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 63036,
+            "byteLength": 63036,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 126072,
+            "byteLength": 42024,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 168096,
+            "byteLength": 65664,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 233760,
+            "byteLength": 35532,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 269292,
+            "byteLength": 1152,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 270444,
+            "byteLength": 4992,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 275436,
+            "uri": "장스탠드_binary.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "perspective": {
+                "znear": 0.0002534778031986207,
+                "yfov": 0.6024156808853149,
+                "zfar": 13.941279411315918,
+                "aspectRatio": 1.3333333730697632
+            },
+            "type": "perspective",
+            "name": "render_camera"
+        }
+    ],
+    "images": [
+        {
+            "name": "Natural white tissu_50_DB",
+            "uri": "장스탠드_images/Natural white tissu_50_DB.jpg",
+            "mimeType": "image/jpeg"
+        },
+        {
+            "name": "Red blue textile_80_D",
+            "uri": "장스탠드_images/Red blue textile_80_D.jpg",
+            "mimeType": "image/jpeg"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.6000000238418579
+            },
+            "name": "Natural white tissu",
+            "doubleSided": true
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.6000000238418579
+            },
+            "name": "Burnished Olive Anodized Aluminum",
+            "doubleSided": true
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 1
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.6000000238418579
+            },
+            "name": "Red blue textile",
+            "doubleSided": true
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.5149207711219788,
+                    0.5149207711219788,
+                    0.5149207711219788,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.6000000238418579
+            },
+            "name": "Gray Opaque Plastic",
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "model",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    },
+                    "indices": 3,
+                    "material": 0
+                },
+                {
+                    "attributes": {
+                        "TEXCOORD_0": 2,
+                        "NORMAL": 1,
+                        "POSITION": 0
+                    },
+                    "indices": 4,
+                    "material": 1
+                },
+                {
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    },
+                    "indices": 5,
+                    "material": 2
+                },
+                {
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    },
+                    "indices": 6,
+                    "material": 3
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "translation": [
+                3.4606213569641115,
+                0.29999998211860659,
+                0.663236677646637
+            ],
+            "rotation": [
+                -0.12059047073125839,
+                0.379409521818161,
+                0.04995020851492882,
+                0.9159756302833557
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "camera": 0,
+            "name": "render_camera_n3d"
+        },
+        {
+            "mesh": 0,
+            "name": "model"
+        }
+    ],
+    "samplers": [
+        {},
+        {}
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0,
+                1
+            ],
+            "name": "scene"
+        }
+    ],
+    "textures": [
+        {
+            "name": "Natural white tissu::baseColor::image",
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "name": "Red blue textile::baseColor::image",
+            "sampler": 1,
+            "source": 1
+        }
+    ],
+    "scene": 0
+}
