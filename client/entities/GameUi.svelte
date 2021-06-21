@@ -1,3 +1,5 @@
+<script context = "module">
+  </script>
 <svelte:head>
     <style>
         *{
@@ -48,16 +50,22 @@
         margin-right: 5px;
         }
       </style>
-      <script>
-        
-      </script>
+      
 </svelte:head>
+<script>
+    export let scoreText;
 
-<div aframe-injected class="uibox">
+      </script>
+<a-camera position="20 1.5 15">
+    <a-text id="text" value={scoreText} position="-0.2 1.5 -2"color="black"></a-text>
+    <a-text id="timer" value={"TIMER"} position="-2.85 1.5 -2"color="black" scale="0.8 0.8 0.8"></a-text>
+    <a-cursor color="red"></a-cursor>
+</a-camera>
+
+<!-- <div aframe-injected class="uibox">
     <div class="textbox">
-    <p aframe-injected id="text">0 / 2</p>
     </div>
     <div id="demo"></div>
     <div id="life"></div>
 
-</div>
+</div> -->

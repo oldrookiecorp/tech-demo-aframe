@@ -1,8 +1,13 @@
 
     <a-assets>
-        <img id="floor" src="assets/Puzzle/environment/floor.png" />
-        <img id="wall" src="assets/Puzzle/environment/wall.jpg" />
+      <img id="floor" src="assets/Puzzle/environment/floor.png" />
+      <img id="wall" src="assets/Puzzle/environment/wall.jpg" />
+      <img id="sky" src="assets/Puzzle/environment/sky.jpg" />
+
     </a-assets>
+    <a-sky src="#sky"></a-sky>
+
+   
      <!-- 벽 -->
      <a-box
      shadow="cast: true;"
@@ -15,7 +20,7 @@
    ></a-box>
    <!-- right -->
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true;"
      position="10 0 15"
      rotation="0 90 0"
      width="10"
@@ -25,7 +30,7 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true;"
      position="10 0 2.5"
      rotation="0 90 0"
      width="5"
@@ -36,7 +41,7 @@
    ></a-box>
 
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true;"
      position="-10 0 10"
      rotation="0 90 0"
      width="20"
@@ -45,14 +50,15 @@
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
-   <!-- <a-box
+   <a-box
+   shadow="cast: true;"
      position="0 0 20"
      width="20"
      height="10"
      src="#wall"
      ammo-body="type:static"
     ammo-shape="type:box"
-   ></a-box> -->
+   ></a-box>
    <!-- 천장 & 바닥 -->
    <a-box
      shadow="cast: true; "
@@ -65,7 +71,7 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true;"
      position="0 -5 10"
      rotation="90 0 0"
      width="20"
@@ -79,7 +85,7 @@
    <!-- 벽 -->
    <!-- 앞 -->
    <a-box
-     shadow="cast: true; "
+    shadow="cast: true;"
      position="20 0 0"
      width="20"
      height="10"
@@ -100,7 +106,8 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="30 0 2.5"
      rotation="0 90 0"
      width="5"
@@ -122,7 +129,8 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="10 0 2.5"
      rotation="0 90 0"
      width="5"
@@ -132,14 +140,16 @@
     ammo-shape="type:box"
    ></a-box>
    <!-- 뒤 -->
-   <!-- <a-box
+   <a-box
+   shadow="cast: true; "
+
      position="20 0 20"
      width="20"
      height="10"
      src="#wall"
      ammo-body="type:static"
     ammo-shape="type:box"
-   ></a-box> -->
+   ></a-box>
    <!-- 천장 & 바닥 -->
    <a-box
      shadow="cast: true; "
@@ -152,7 +162,8 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="20 -5 10"
      rotation="90 0 0"
      width="20"
@@ -167,7 +178,8 @@
    <!-- 벽 -->
    <!-- 앞 -->
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="40 0 0"
      width="20"
      height="10"
@@ -178,7 +190,8 @@
    <!-- right -->
 
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="50 0 10"
      rotation="0 90 0"
      width="20"
@@ -190,7 +203,8 @@
 
    <!-- 왼 -->
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="30 0 15"
      rotation="0 90 0"
      width="10"
@@ -200,7 +214,8 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="30 0 2.5"
      rotation="0 90 0"
      width="5"
@@ -210,17 +225,20 @@
     ammo-shape="type:box"
    ></a-box>
    <!-- 뒤 -->
-   <!-- <a-box
+   <a-box
+   shadow="cast: true; "
+
      position="40 0 20"
      width="20"
      height="10"
      src="#wall"
      ammo-body="type:static"
     ammo-shape="type:box"
-   ></a-box> -->
+   ></a-box>
    <!-- 천장 & 바닥 -->
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="40 5 10"
      color="rgb(179, 179, 179)"
      rotation="90 0 0"
@@ -230,7 +248,8 @@
     ammo-shape="type:box"
    ></a-box>
    <a-box
-     shadow="cast: true;"
+   shadow="cast: true; "
+     
      position="40 -5 10"
      rotation="90 0 0"
      width="20"

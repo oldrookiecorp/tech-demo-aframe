@@ -5,6 +5,8 @@ import { registRoute } from "./register";
 import * as Home from "../../client/pages/Home.svelte";
 import * as Fruits from "../../client/pages/Fruits.svelte";
 import * as Puzzle from "../../client/pages/Puzzle.svelte";
+import * as PuzzleN from "../../client/pages/PuzzleN.svelte";
+import * as PuzzleH from "../../client/pages/PuzzleH.svelte";
 
 const pathStaticDir = path.resolve(__dirname, "./static");
 const files = fs.readdirSync(pathStaticDir);
@@ -20,6 +22,18 @@ export const init = (instance) => {
   registRoute(instance, "/fruits", Fruits, getFileName(files, Fruits.fileName));
   //Puzzle
   registRoute(instance, "/puzzle", Puzzle, getFileName(files, Puzzle.fileName));
+  registRoute(
+    instance,
+    "/puzzleN",
+    PuzzleN,
+    getFileName(files, PuzzleN.fileName)
+  );
+  registRoute(
+    instance,
+    "/puzzleH",
+    PuzzleH,
+    getFileName(files, PuzzleH.fileName)
+  );
 
   return instance;
 };
