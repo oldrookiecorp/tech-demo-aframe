@@ -118,25 +118,19 @@
 </svelte:head>
   <a-scene physics="driver:ammo;debug:true; " >
     <a-entity
-    light="type: ambient;  intensity: 0.2;"
-
+    light="type: ambient;  intensity: 0.5;"
     position="20 0 12"
-  ></a-entity>
-  <a-entity
-    light="type: point; castShadow: true; intensity: 0.2;"
-
-    position="-0.274 1.950 15.506"
-  ></a-entity>
+  />
+ 
   <a-entity
     light="type: point; castShadow: true; intensity: 0.2;"
     position="20 -2 8"
-  ></a-entity>
+  />
   <a-entity
-      light="type:  point;  intensity:0.5 castShadow: true;"
-      position="50 0 12"
-
-    />
-    <GameUi scoreText={"0/2"}/>
-    <GameObject/>
-    <Room/>
+    light="type:  point;  intensity:0.5 castShadow: true;"
+    position="50 0 12"
+  />
+  <GameUi scoreText={"0/2"}/>
+  <GameObject/>
+  <Room/>
   </a-scene>

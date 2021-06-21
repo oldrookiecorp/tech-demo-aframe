@@ -5,9 +5,7 @@
       <img id="sky" src="assets/Puzzle/environment/sky.jpg" />
 
     </a-assets>
-    <a-sky src="#sky"></a-sky>
-
-   
+    <a-sky src="#sky"/>
      <!-- 벽 -->
      <a-box
      shadow="cast: true;"
