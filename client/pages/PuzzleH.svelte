@@ -131,13 +131,15 @@
   <a-scene physics="driver:ammo;debug:true; " >
     <a-assets>
       <a-asset-item id="stand"src="assets/Puzzle/gltf/장스탠드/장스탠드.gltf"/>
-      <a-asset-item id="thing"src="assets/Puzzle/gltf/인센스/인센스.gltf"/>
+      <a-asset-item id="Ecarpet"src="assets/Puzzle/gltf/에스닉 카펫/에스닉_카펫.gltf"/>
+      <a-asset-item id="Scarpet"src="assets/Puzzle/gltf/블랙 스트라이프 카펫/블랙_스트라이프 카펫.gltf"/>
+
       <a-asset-item id="cabinet"src="assets/Puzzle/gltf/우드 종이수납함/종이수납함 나무.gltf"/>
       <a-asset-item id="woodShelf"src="assets/Puzzle/gltf/wood shelf/scene.gltf"/>
 
     </a-assets>
     <a-entity
-        light="type: ambient;castShadow: true; intensity: 1; color: black"
+        light="type: ambient;intensity: 1; color: black"
         position="20 0 12"
       />
       <a-entity
@@ -157,17 +159,28 @@
     <GameUi scoreText={"0/5"}/>
     <GameObject/>
     <Room/>
+    <!-- carpet -->
     <a-gltf-model 
-    check-answer
     shadow="cast: true; receive: true"
-
+    check-answer
     rotation="-180 80.9 -180"
     class="env answer"
-    src="#thing" 
-    scale="1 0.6 1"
-    position="-8.2 3.1 11.537"
-    id="thing"
+    src="#Ecarpet" 
+    scale="4 4 4"
+    position="-1.27 -4.61 9.69"
+    id="Ecarpet"
     />
+    <a-gltf-model 
+    shadow="cast: true; receive: true"
+    check-answer
+    rotation="-180 80.9 -180"
+    class="env"
+    src="#Scarpet" 
+    scale="4 4 4"
+    position="39.6 -4.61 9.69"
+    id="Scarpet"
+    />
+    <!-- stand lamp -->
     <a-gltf-model 
     shadow="cast: true; receive: true"
 
@@ -178,6 +191,7 @@
     position="8.1 -4.75 18.743"
     id="standLamp"
     />
+    <!-- cabinet -->
     <a-gltf-model 
     shadow="cast: true; receive: true"
 
@@ -188,6 +202,7 @@
     position="-7.643 -4.687 1.102"
     id="cabinet"
     />
+    <!-- wood shelf -->
     <a-gltf-model 
    sshadow="cast: true; receive: true"
 

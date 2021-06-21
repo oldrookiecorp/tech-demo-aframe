@@ -133,7 +133,7 @@
       <a-asset-item id="stand"src="assets/Puzzle/gltf/장스탠드/장스탠드.gltf"/>
     </a-assets>
     <a-entity
-    light="type: ambient; castShadow: true; intensity: 0.2;"
+    light="type: ambient;intensity: 0.2;"
 
     position="20 0 12"
   ></a-entity>

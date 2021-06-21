@@ -118,7 +118,7 @@
 </svelte:head>
   <a-scene physics="driver:ammo;debug:true; " >
     <a-entity
-    light="type: ambient; castShadow: true; intensity: 0.2;"
+    light="type: ambient;  intensity: 0.2;"
 
     position="20 0 12"
   ></a-entity>

@@ -78,7 +78,7 @@
      height="20"
      src="#floor"
      ammo-body="type:static"
-    ammo-shape="type:box"
+    ammo-shape="type:plain"
      depth="0.5"
    ></a-box>
 
@@ -170,7 +170,7 @@
      height="20"
      src="#floor"
      ammo-body="type:static"
-    ammo-shape="type:box"
+     ammo-shape="type:plain"
      depth="0.5"
    ></a-box>
 
