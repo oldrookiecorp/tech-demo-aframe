@@ -95,6 +95,8 @@
           ) {
             // 인터벌을 클리어
             window.clearInterval(state[STATES.INTERVAL]);
+            // 게임 상태를 시작상태로 변경
+            state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].FINISHED;
             // 스테이트의 인터벌 초기화
             state[STATES.INTERVAL] = null;
             // 스테이트의 시작일자 초기화

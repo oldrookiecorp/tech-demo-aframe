@@ -1,5 +1,5 @@
 <script context="module">
-  import { default as UIAssets, Assets } from "../assets/UI.svelte";
+  import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
   import UIStates from "../states/UI/index.svelte";
   import UIGlobalComponent from "../components/UI/ui.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
