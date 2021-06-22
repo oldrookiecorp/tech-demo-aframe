@@ -14,7 +14,7 @@
 
   export const __INITIAL_STATES = {
     [KEYS_OF_STATE.NUMBER_OF_TARGETS]: 3,
-    [KEYS_OF_STATE.REMAIN_TARGETS]: 3,
+    [KEYS_OF_STATE.REMAIN_TARGETS]: 0,
   };
 
   export const __HANDLERS = {
