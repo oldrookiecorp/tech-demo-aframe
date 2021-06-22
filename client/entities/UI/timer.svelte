@@ -5,6 +5,7 @@
   if (typeof window !== "undefined") {
     AFRAME.registerComponent("ui-timer", {
       schema: {
+        // 남은 초
         [STATES.REMAIN_SECONDS]: {
           type: "number",
           default: -1,

@@ -4,11 +4,12 @@
   if (typeof window !== "undefined") {
     AFRAME.registerComponent("ui-targets", {
       schema: {
-        // 남은 생명 수
+        // 최대 타겟 수
         [STATES.NUMBER_OF_TARGETS]: {
           type: "number",
           default: 5,
         },
+        // 남은 타겟 수
         [STATES.REMAIN_TARGETS]: {
           type: "number",
           default: 5,

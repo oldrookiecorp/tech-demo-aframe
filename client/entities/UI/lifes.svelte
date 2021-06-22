@@ -4,11 +4,12 @@
   if (typeof window !== "undefined") {
     AFRAME.registerComponent("ui-lifes", {
       schema: {
-        // 남은 생명 수
+        // 제한 생명 수
         [STATES.LIFES]: {
           type: "number",
           default: 5,
         },
+        // 남은 생명 수
         [STATES.REMAIN_LIFES]: {
           type: "number",
           default: 5,
