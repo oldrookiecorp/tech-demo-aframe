@@ -1,4 +1,4 @@
-<svelte:head>
+
   <script>
     if (typeof window !== "undefined") {
       AFRAME.registerComponent("lifes", {
@@ -22,5 +22,4 @@
       });
     }
   </script>
-</svelte:head>
 

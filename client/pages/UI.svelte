@@ -1,6 +1,6 @@
 <script context="module">
   import { default as UIAssets, Assets } from "../assets/UI.svelte";
-  import { default as Lifes } from "../components";
+  import { default as Lifes } from "../components/Lifes.svelte";
   export const fileName = "UI";
 </script>
 
