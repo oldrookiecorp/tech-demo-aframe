@@ -27,6 +27,7 @@
           ..._oldData,
           shader: "flat",
           align: "center",
+          width: 0.8,
           value: `${_remainTimes}`,
         });
       },
@@ -35,7 +36,7 @@
 </script>
 
 <a-entity
-  position="0 -0.72 0"
+  position="0 .07 0.01"
   ui-timer
   bind__ui-timer={`${StateLib.bind([STATES.REMAIN_SECONDS])}`}
 />

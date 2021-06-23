@@ -1,9 +1,9 @@
-import path from "path";
 import { fastify } from "fastify";
 import * as Router from "./routes";
 
+const fs = require("fs");
+const path = require("path");
 const dev = process.env.DEV === "true";
-
 // STATIC
 const pathStaticDir = path.resolve(__dirname, "./static");
 
@@ -11,6 +11,14 @@ const pathStaticDir = path.resolve(__dirname, "./static");
 const _fastify = fastify({
   ignoreTrailingSlash: true,
   logger: true,
+  http2: true,
+  https: {
+    allowHTTP1: true, // fallback support for HTTP1
+    key: fs.readFileSync(path.join(__dirname, "..", "config", "localhost.key")),
+    cert: fs.readFileSync(
+      path.join(__dirname, "..", "config", "localhost.crt")
+    ),
+  },
 });
 
 _fastify.register(require("fastify-compress"));

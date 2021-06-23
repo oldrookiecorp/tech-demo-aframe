@@ -33,6 +33,7 @@
     "fastify-compress": "^3.3.0",
     "fastify-static": "^3.2.0",
     "file-loader": "^6.1.0",
+    "fs": "^0.0.1-security",
     "nodemon-webpack-plugin": "^4.3.2",
     "rimraf": "^3.0.2",
     "sass": "^1.26.10",

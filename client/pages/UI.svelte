@@ -13,12 +13,15 @@
 
 <a-scene
   id="scene-stage-1"
-  inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
-  stats
   ui
+  vr-mode-ui
+  inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
 >
   <UIAssets />
   <a-entity light="type:  ambient;" />
+
+  <a-entity laser-controls="hand: left" />
+  <a-entity laser-controls="hand: right" />
   <a-entity camera look-controls wasd-controls>
     <a-entity
       cursor="fuse: true; fuseTimeout: 500"

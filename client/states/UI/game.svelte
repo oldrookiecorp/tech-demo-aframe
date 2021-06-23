@@ -8,12 +8,14 @@
   export const KEYS_OF_STATE = {
     STATE_OF_GAME: "stateOfGame",
     CURRENT_STAGE: "currentStage",
+    ENABLE_XR_MODE: "enableXRMode",
   };
 
   export const KEYS_OF_HANDLER = {
     INIT: "initGame",
     SET_GAME_STATE: "setGameState",
     SET_CURRENT_STAGE: "setCurrentStage",
+    SET_ENABLE_XR_MODE: "setEnableXRMode",
   };
 
   export const __INITIAL_STATES = {
@@ -49,6 +51,10 @@
         console.log(_error);
         throw _error;
       }
+    },
+    [KEYS_OF_HANDLER.SET_ENABLE_XR_MODE](state, action) {
+      state[KEYS_OF_STATE.ENABLE_XR_MODE] =
+        action[KEYS_OF_STATE.ENABLE_XR_MODE];
     },
   };
 </script>

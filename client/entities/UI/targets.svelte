@@ -33,9 +33,6 @@
 </script>
 
 <a-entity
-  position="0 .78 0"
-  geometry="primitive:plane;width:.25;height:.12;"
-  material="shader:flat; color:#000; opacity:.7"
   ui-targets
   bind__ui-targets={`${StateLib.bind([
     STATES.NUMBER_OF_TARGETS,

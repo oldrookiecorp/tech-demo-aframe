@@ -76,9 +76,7 @@
 </script>
 
 <a-entity
-  position="-0 -.8 0"
-  material="shader:flat; color:#000; opacity:.7"
-  geometry="primitive:plane; height:0.24; width : .4"
+  position="0 0 .01"
   ui-lifes
   bind__ui-lifes={StateLib.bind([STATES.LIFES, STATES.REMAIN_LIFES])}
 />
