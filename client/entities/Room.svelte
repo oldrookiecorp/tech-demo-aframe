@@ -1,18 +1,17 @@
+<script context="module">
+  import { default as UIAssets, Assets } from "../assets/Room.svelte";
+</script>
 
-    <a-assets>
-      <img id="floor" src="assets/Puzzle/environment/floor.png" />
-      <img id="wall" src="assets/Puzzle/environment/wall.jpg" />
-      <img id="sky" src="assets/Puzzle/environment/sky.jpg" />
-
-    </a-assets>
-    <a-sky src="#sky"/>
+  <UIAssets />
+    
+    <a-sky src={Assets.sky}/>
      <!-- 벽 -->
      <a-box
      shadow="cast: true;"
      position="0 0 0"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -23,7 +22,7 @@
      rotation="0 90 0"
      width="10"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -33,7 +32,7 @@
      rotation="0 90 0"
      width="5"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -44,7 +43,7 @@
      rotation="0 90 0"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -53,7 +52,7 @@
      position="0 0 20"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -74,7 +73,7 @@
      rotation="90 0 0"
      width="20"
      height="20"
-     src="#floor"
+     src={Assets.floor}
      ammo-body="type:static"
     ammo-shape="type:plain"
      depth="0.5"
@@ -87,7 +86,7 @@
      position="20 0 0"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -99,7 +98,7 @@
      rotation="0 90 0"
      width="10"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -110,7 +109,7 @@
      rotation="0 90 0"
      width="5"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -122,7 +121,7 @@
      rotation="0 90 0"
      width="10"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -133,7 +132,7 @@
      rotation="0 90 0"
      width="5"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -144,7 +143,7 @@
      position="20 0 20"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -166,7 +165,7 @@
      rotation="90 0 0"
      width="20"
      height="20"
-     src="#floor"
+     src={Assets.floor}
      ammo-body="type:static"
      ammo-shape="type:plain"
      depth="0.5"
@@ -181,7 +180,7 @@
      position="40 0 0"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -194,7 +193,7 @@
      rotation="0 90 0"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -207,7 +206,7 @@
      rotation="0 90 0"
      width="10"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -218,7 +217,7 @@
      rotation="0 90 0"
      width="5"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -229,7 +228,7 @@
      position="40 0 20"
      width="20"
      height="10"
-     src="#wall"
+     src={Assets.wall}
      ammo-body="type:static"
     ammo-shape="type:box"
    ></a-box>
@@ -252,7 +251,7 @@
      rotation="90 0 0"
      width="20"
      height="20"
-     src="#floor"
+     src={Assets.floor}
      ammo-body="type:static"
     ammo-shape="type:box"
      depth="0.5"

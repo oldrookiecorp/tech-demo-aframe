@@ -2,7 +2,9 @@
 <script>
     export let scoreText;
 
-      </script>
+</script>
+<a-entity laser-controls="hand: left"raycaster="lineColor: red; lineOpacity: 0.5"></a-entity>
+<a-entity laser-controls="hand: right"raycaster="lineColor: red; lineOpacity: 0.5"></a-entity>
 <a-camera 
     position="20 1.5 15" 
     >

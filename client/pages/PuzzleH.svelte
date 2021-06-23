@@ -4,9 +4,8 @@
   import GameObject from "../entities/GameObject.svelte";
   import GameUi from "../entities/GameUi.svelte";
   import Room from "../entities/Room.svelte";
-  import {gameTimer} from "../components/gameTimer";
   export const fileName = "Puzzle";
-  
+
 </script>
 <svelte:head>
 
@@ -129,15 +128,7 @@
   </script>
 </svelte:head>
   <a-scene physics="driver:ammo;debug:true; " >
-    <a-assets>
-      <a-asset-item id="stand"src="assets/Puzzle/gltf/장스탠드/장스탠드.gltf"/>
-      <a-asset-item id="Ecarpet"src="assets/Puzzle/gltf/에스닉 카펫/에스닉_카펫.gltf"/>
-      <a-asset-item id="Scarpet"src="assets/Puzzle/gltf/블랙 스트라이프 카펫/블랙_스트라이프 카펫.gltf"/>
-
-      <a-asset-item id="cabinet"src="assets/Puzzle/gltf/우드 종이수납함/종이수납함 나무.gltf"/>
-      <a-asset-item id="woodShelf"src="assets/Puzzle/gltf/wood shelf/scene.gltf"/>
-
-    </a-assets>
+    
     <a-entity
         light="type: ambient;intensity: 1; color: black"
         position="20 0 12"
@@ -157,59 +148,7 @@
     />
     
     <GameUi scoreText={"0/5"}/>
-    <GameObject/>
+    <GameObject Hard={true}/>
     <Room/>
-    <!-- carpet -->
-    <a-gltf-model 
-    shadow="cast: true; receive: true"
-    check-answer
-    rotation="-180 80.9 -180"
-    class="env answer"
-    src="#Ecarpet" 
-    scale="4 4 4"
-    position="-1.27 -4.61 9.69"
-    id="Ecarpet"
-    />
-    <a-gltf-model 
-    shadow="cast: true; receive: true"
-    check-answer
-    rotation="-180 80.9 -180"
-    class="env"
-    src="#Scarpet" 
-    scale="4 4 4"
-    position="39.6 -4.61 9.69"
-    id="Scarpet"
-    />
-    <!-- stand lamp -->
-    <a-gltf-model 
-    shadow="cast: true; receive: true"
-
-    check-answer
-    class="env answer"
-    src="#stand" 
-    scale="1 0.6 1"
-    position="8.1 -4.75 18.743"
-    id="standLamp"
-    />
-    <!-- cabinet -->
-    <a-gltf-model 
-    shadow="cast: true; receive: true"
-
-    check-answer
-    class="env answer"
-    src="#cabinet" 
-    scale="1 0.6 1"
-    position="-7.643 -4.687 1.102"
-    id="cabinet"
-    />
-    <!-- wood shelf -->
-    <a-gltf-model 
-   sshadow="cast: true; receive: true"
-
-    class="env "
-    src="#woodShelf" 
-    scale="0.023 0.03 0.03"
-    position="33.3 -3.687 1.102"
-    id="woodShelf"
-    />
+    
   </a-scene>

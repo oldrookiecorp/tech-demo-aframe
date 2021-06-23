@@ -17,6 +17,7 @@
       },
       handlers: {
         initialize(state, action) {
+          // action과 actions가 다른것인가?
           state.lifes = action.lifes;
           state.seconds = actions.seconds;
           state.remainSeconds = actions.remainSeconds;
@@ -32,6 +33,7 @@
             const { startedAt, seconds } = state;
             // 현재와 시작 남은 시간 계산
             const _now = new moment();
+            //scene에다가 emit하면 언제 실행되는 것인가?
             AFRAME.scenes[0].emit("setRemainSeconds", {
               seconds: seconds - _now.diff(startedAt, "seconds"),
             });
@@ -105,7 +107,9 @@
 
     <a-plane position="1 .5 -1" color="#242424" width="1" height=".5">
       <a-entity material="type:plain" geometry="height: auto; width: auto">
-        <a-entity lifes bind__lifes="remainLifes:lifes" /><a-entity
+        
+        <a-entity lifes bind__lifes="remainLifes:lifes" />
+        <a-entity
           lifes
           bind__lifes="remainLifes:lifes"
         />

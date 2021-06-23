@@ -4,7 +4,6 @@
   import GameObject from "../entities/GameObject.svelte";
   import GameUi from "../entities/GameUi.svelte";
   import Room from "../entities/Room.svelte";
-  import {gameTimer} from "../components/gameTimer";
   export const fileName = "Puzzle";
   
 </script>
