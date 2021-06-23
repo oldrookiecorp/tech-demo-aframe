@@ -34,7 +34,7 @@
             _heart.setAttribute("width", __HEART_IMG_WIDTH);
             _heart.setAttribute("height", __HEART_IMG_HEIGHT);
             _heart.setAttribute("position", {
-              x: 0 + __HEART_IMG_WIDTH * i + __HEART_IMG_MARGIN * i,
+              x: 0 + __HEART_IMG_WIDTH * (i - 2) + __HEART_IMG_MARGIN * (i - 2),
               y: 0,
               z: 0,
             });
@@ -76,7 +76,9 @@
 </script>
 
 <a-entity
-  position="-.47 0 0"
+  position="-0 -.8 0"
+  material="shader:flat; color:#000; opacity:.7"
+  geometry="primitive:plane; height:0.24; width : .4"
   ui-lifes
   bind__ui-lifes={StateLib.bind([STATES.LIFES, STATES.REMAIN_LIFES])}
 />

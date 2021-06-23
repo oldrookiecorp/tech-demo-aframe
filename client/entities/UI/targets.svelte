@@ -21,7 +21,9 @@
         const _oldData = element.getAttribute("text");
         element.setAttribute("text", {
           ..._oldData,
-          value: `remain Targets : ${data[STATES.REMAIN_TARGETS]}/${
+          width: 0.8,
+          align: "center",
+          value: `remains\n${data[STATES.REMAIN_TARGETS]}/${
             data[STATES.NUMBER_OF_TARGETS]
           }`,
         });
@@ -31,7 +33,9 @@
 </script>
 
 <a-entity
-  position="0 0.05 0"
+  position="0 .78 0"
+  geometry="primitive:plane;width:.25;height:.12;"
+  material="shader:flat; color:#000; opacity:.7"
   ui-targets
   bind__ui-targets={`${StateLib.bind([
     STATES.NUMBER_OF_TARGETS,

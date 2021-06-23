@@ -18,13 +18,13 @@
   ui
 >
   <UIAssets />
-  <a-entity light="type:  ambient; " />
+  <a-entity light="type:  ambient;" />
   <a-entity camera look-controls wasd-controls>
     <a-entity
       cursor="fuse: true; fuseTimeout: 500"
       position="0 0 -1"
       geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-      material="color: fff; shader: flat; opacity: .8"
+      material="color: #fff; shader: flat; opacity: .8"
     />
     <UIComponent />
   </a-entity>
