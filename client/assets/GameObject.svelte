@@ -1,5 +1,5 @@
 <script context="module">
-    export const Assets = {
+    export const ObjAssets = {
       stand: "#stand",
       Ecarpet: "#Ecarpet",
       Scarpet: "#Scarpet",

@@ -17,13 +17,14 @@
   };
 
   export const __INITIAL_STATES = {
-    [KEYS_OF_STATE.SECONDS]: 300,
-    [KEYS_OF_STATE.REMAIN_SECONDS]: 300,
+    [KEYS_OF_STATE.SECONDS]: 180,
+    [KEYS_OF_STATE.REMAIN_SECONDS]: 180,
     [KEYS_OF_STATE.INTERVAL]: null,
     [KEYS_OF_STATE.STARTED_AT]: null,
   };
 
   export const __HANDLERS = {
+    // 여기를 보기
     [KEYS_OF_HANDLER.INIT_TIMERS]: function (state, action) {
       state = {
         __INITIAL_STATES,

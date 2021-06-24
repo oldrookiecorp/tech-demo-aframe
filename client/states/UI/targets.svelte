@@ -19,7 +19,7 @@
 
   export const __HANDLERS = {
     [KEYS_OF_HANDLER.INIT_TARGETS]: function (state) {
-      state[STATES.REMAIN_TARGETS] = __INITIAL_STATES[STATES.REMAIN_TARGETS];
+      state[STATES.REMAIN_TARGETS] = __INITIAL_STATES[STATES.NUMBER_OF_TARGETS];
     },
     // 남은 타겟 setter
     [KEYS_OF_HANDLER.DECREASE_REMAIN_TARGETS]: (state) => {
@@ -27,7 +27,7 @@
         state[GameState.KEYS_OF_STATE.STATE_OF_GAME] ===
         GameState.STATES_OF_GAME.STARTED
       ) {
-        state[KEYS_OF_STATE.REMAIN_TARGETS]--;
+        state[KEYS_OF_STATE.REMAIN_TARGETS]++;
       } else {
         const __ERROR = new Error("[STATE:Targets] 게임이 실행중이 아닙니다");
         console.log(__ERROR);

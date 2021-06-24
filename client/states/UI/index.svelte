@@ -108,7 +108,7 @@
               Timers.__INITIAL_STATES[STATES.SECONDS];
             // 남은 타겟 수 초기화
             state[STATES.REMAIN_TARGETS] =
-              Targets.__INITIAL_STATES[STATES.NUMBER_OF_TARGETS];
+              Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
             console.log("[STATE:Global] 게임이 종료되었습니다");
           } else {
             const _error = new Error(
