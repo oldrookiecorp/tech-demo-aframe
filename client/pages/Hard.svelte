@@ -1,6 +1,5 @@
 <script context="module">
   import GameObject from "../entities/GameObject.svelte";
-  // import GameUi from "../entities/GameUi.svelte";
   import Room from "../entities/Room.svelte";
   import CheckAnswer from "../components/CheckAnswer.svelte"
   import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
@@ -17,9 +16,7 @@
 
 <svelte:head>
   <script>
-
     // 상태변수
-    let score = 0;
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -61,13 +58,13 @@
   </script>
 </svelte:head>
 <!-- UI 관련 스테이트 -->
-<UIStates />
+<UIStates/>
 <!-- UI의 글로벌 컴포넌트 -->
 <UIGlobalComponent />
 <!-- 정답체크 컴포넌트 -->
 <CheckAnswer/>
 <a-scene
-  id="scene-stage-1"
+  id="scene-stage-3 "
   ui
   vr-mode-ui
   inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"

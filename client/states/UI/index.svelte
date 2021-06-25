@@ -4,7 +4,6 @@
   import * as Targets from "./targets.svelte";
   import * as Timers from "./timer.svelte";
   import * as TimerLib from "../../lib/UI/Timer";
-
   export const ENUMS = {
     [Game.KEYS_OF_STATE.STATE_OF_GAME]: Game.STATES_OF_GAME,
   };
@@ -37,6 +36,9 @@
         ...Lifes.__INITIAL_STATES,
         ...Targets.__INITIAL_STATES,
         ...Timers.__INITIAL_STATES,
+        // [Timers.KEYS_OF_STATE.SECONDS]:TimeProps ,
+
+        // [Timers.KEYS_OF_STATE.REMAIN_SECONDS]: TimeProps,
         [STATES.CURRENT_SCENE]: null,
       },
       handlers: {
