@@ -61,9 +61,9 @@
             state[STATES.STARTED_AT] = new moment();
 
             // 타이머 초기화
-            const _seconds = state[STATES.SECONDS];
-            const _startedAt = state[STATES.STARTED_AT];
             const _currentScene = state[STATES.CURRENT_SCENE];
+            const _startedAt = state[STATES.STARTED_AT];
+            const _seconds = state[STATES.SECONDS];
             // 인터벌 set
             state[STATES.INTERVAL] = window.setInterval(() => {
               // 스테이트로 부터 값 계산
