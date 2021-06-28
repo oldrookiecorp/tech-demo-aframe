@@ -1,7 +1,7 @@
 <script context="module">
   import GameObject from "../entities/GameObject.svelte";
   // import GameUi from "../entities/GameUi.svelte";
-  import Room from "../entities/Room.svelte";
+  import RoomTest from "../entities/RoomTest.svelte";
   import CheckAnswer from "../components/CheckAnswer.svelte"
   import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
   import UIStates from "../states/UI/index.svelte";
@@ -21,12 +21,20 @@
         // 환경배치
         const scene = document.querySelector("a-scene");
         const copyArr = document.getElementsByClassName("env");
+        // const position = [
+        //   "-2 -4.5 4.1",
+        //   "4.541 -4.5 15.448",
+        //   "-8.404 -4.856 15.446",
+        //   "5 -4.5 3",
+        //   "-8.156 1.19 10.908",
+        // ];
         const position = [
           "-2 -4.5 4.1",
-          "4.541 -4.5 15.448",
           "-8.404 -4.856 15.446",
-          "5 -4.5 3",
+
           "-8.156 1.19 10.908",
+          "5 -4.5 3",
+          "7.327 -4.72 14.503",
         ];
         for (let j = 0; j < 5; j++) {
           const copyElement = copyArr[j].cloneNode();
@@ -40,15 +48,10 @@
             console.log("start!");
             const answerArr = document.getElementsByClassName("answer");
             const srcArr = [
-              "assets/Puzzle/gltf/starbucks_grande_coffee_cup_caution_hot/scene.gltf",
-              "assets/Puzzle/gltf/book_of_duban/scene.gltf",
+              "assets/Puzzle/gltf/빈백_쿠션_코랄색/빈백_쿠션_코랄색.gltf",
             ];
-            const scale = ["0.2 0.17 0.2", "0.6 0.5 0.4"];
-            const rotation = ["0 0 0 ", "0 -145.678 0"];
             for (let i = 0; i < 2; i++) {
               answerArr[i].setAttribute("src", srcArr[i]);
-              answerArr[i].setAttribute("scale", scale[i]);
-              answerArr[i].setAttribute("rotation", rotation[i]);
             }
             AFRAME.scenes[0].emit('startGame');
           });
@@ -96,5 +99,5 @@
     <UIComponent />
   </a-entity>
   <GameObject Normal={true} />
-  <Room />
+  <RoomTest />
 </a-scene>

@@ -28,15 +28,7 @@
   scale="0.03 0.04 0.05"
   rotation="0 -90 0"
 />
-<!-- 침대 -->
-<a-gltf-model
-  src={ObjAssets.bed}
-  class="env"
-  shadow="cast: true; receive: true"
-  position="44.541 -4.5 15.448"
-  scale="0.03 0.04 0.03"
-  rotation="0 0 0"
-/>
+
 <!-- 책장 -->
 <a-gltf-model
   src={ObjAssets.shelf}
@@ -46,12 +38,14 @@
   rotation="0 90 0"
 />
 <!-- 정답 -->
+<!-- 빈백 -->
 <a-gltf-model
-  shadow="cast: true; receive: true"
+  src={ObjAssets.aqua}
   class="env answer"
-  position="45 -4.5 3"
-  rotation="0 -45 0"
-  src={ObjAssets.starbucks}
+  shadow="cast: true; receive: true"
+  position="47.439 -4.72 14.503"
+  scale="3.5 3.5 3.5"
+  rotation="0 -86.466 0"
 />
 <a-gltf-model
   shadow="cast: true; receive: true"

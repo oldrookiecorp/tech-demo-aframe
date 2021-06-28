@@ -1,0 +1,216 @@
+{
+    "asset": {
+        "copyright": "2021 (c) Adobe Inc.",
+        "generator": "Adobe Substance 3D Stager - 67fda7961d26c28a731190f8385261e94aa65901",
+        "version": "2.0"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "componentType": 5126,
+            "count": 14302,
+            "type": "VEC3",
+            "max": [
+                0.6472305655479431,
+                1.0007646083831788,
+                0.6502806544303894
+            ],
+            "min": [
+                -0.6449702382087708,
+                -0.0010617394000291825,
+                -0.6509640216827393
+            ]
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 14302,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 14302,
+            "type": "VEC4"
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5126,
+            "count": 14302,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 4,
+            "componentType": 5125,
+            "count": 83148,
+            "type": "SCALAR",
+            "max": [
+                14301.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 171624,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 171624,
+            "byteLength": 171624,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 343248,
+            "byteLength": 228832,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 572080,
+            "byteLength": 114416,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 686496,
+            "byteLength": 332592,
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 1019088,
+            "uri": "빈백_쿠션_아쿠아색_binary.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "perspective": {
+                "znear": 0.000041793191485339779,
+                "yfov": 0.527414858341217,
+                "zfar": 2.2986254692077638,
+                "aspectRatio": 1.3333333730697632
+            },
+            "type": "perspective",
+            "name": "working_cam"
+        }
+    ],
+    "images": [
+        {
+            "name": "base_color_image_texture",
+            "uri": "빈백_쿠션_아쿠아색_images/base_color_image_texture.jpg",
+            "mimeType": "image/jpeg"
+        },
+        {
+            "name": "roughness_image_texture_metallic_image_texture",
+            "uri": "빈백_쿠션_아쿠아색_images/roughness_image_texture_metallic_image_texture.png",
+            "mimeType": "image/png"
+        },
+        {
+            "name": "normal_image_texture",
+            "uri": "빈백_쿠션_아쿠아색_images/normal_image_texture.png",
+            "mimeType": "image/png"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicRoughnessTexture": {
+                    "index": 1
+                }
+            },
+            "normalTexture": {
+                "index": 2
+            },
+            "name": "Anodic Powder Paint",
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "bean_bag_chair_mesh",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TANGENT": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 4,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "translation": [
+                0.550000011920929,
+                0.3199999928474426,
+                0.550000011920929
+            ],
+            "rotation": [
+                -0.12059047073125839,
+                0.379409521818161,
+                0.04995020851492882,
+                0.9159756302833557
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "camera": 0,
+            "name": "working_cam_n3d"
+        },
+        {
+            "translation": [
+                -0.001130180316977203,
+                0.0010617394000291825,
+                0.00034168243291787803
+            ],
+            "mesh": 0,
+            "name": "bean_bag_chair_mesh"
+        }
+    ],
+    "samplers": [
+        {}
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                1
+            ],
+            "name": "scene"
+        }
+    ],
+    "textures": [
+        {
+            "name": "base_color_image_texture",
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "name": "roughness_image_texture_metallic_image_texture",
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "name": "normal_image_texture",
+            "sampler": 0,
+            "source": 2
+        }
+    ],
+    "scene": 0
+}
