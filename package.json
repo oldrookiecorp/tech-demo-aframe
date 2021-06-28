@@ -9,7 +9,8 @@
     "create-entry-scripts": "node server/config/create-client-entry-scripts.js",
     "pages-watch": "chokidar \"client/pages/**\" -c \"npm run create-entry-scripts\" --initial --silent",
     "start": "npm run create-entry-scripts && npm run webpack-build && node dist/bundle.js",
-    "dev": "concurrently \"npm:pages-watch\" \"npm:webpack-watch\"  \"nodemon dist/bundle.js\""
+    "dev": "concurrently \"npm:pages-watch\" \"npm:webpack-watch\"  \"nodemon dist/bundle.js\"",
+    "heroku-postbuild":"yarn build"
   },
   "author": "",
   "license": "ISC",
