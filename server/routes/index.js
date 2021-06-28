@@ -19,11 +19,11 @@ export const getFileName = (fileNames, fileName) =>
 
 export const init = (instance) => {
   // Home
-  registRoute(instance, "/", Home, getFileName(files, Easy.fileName));
+  // registRoute(instance, "/", Easy, getFileName(files, Easy.fileName));
   // Fruits
   registRoute(instance, "/fruits", Fruits, getFileName(files, Fruits.fileName));
   //Puzzle
-  registRoute(instance, "/Easy", Easy, getFileName(files, Easy.fileName));
+  registRoute(instance, "/", Easy, getFileName(files, Easy.fileName));
   registRoute(
     instance,
     "/Normal",
