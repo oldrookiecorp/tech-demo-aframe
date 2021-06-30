@@ -25,6 +25,7 @@
     ...Lifes.KEYS_OF_STATE,
     ...Targets.KEYS_OF_STATE,
     ...Timers.KEYS_OF_STATE,
+    UserName: " ",
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
@@ -59,6 +60,12 @@
             state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].STARTED;
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();
+
+            // 유저 닉네임 확인
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const params = Object.fromEntries(urlSearchParams.entries());
+            STATES.UserName = params.user;
+            console.log(`Username ; ${params.user}`);
 
             // 타이머 초기화
             const _currentScene = state[STATES.CURRENT_SCENE];
@@ -95,6 +102,13 @@
           if (
             state[STATES.STATE_OF_GAME] === ENUMS[STATES.STATE_OF_GAME].STARTED
           ) {
+            // 클라이언트로 데이터 전송
+            window.parent.postMessage({
+              functionName: "gameClear",
+              user_name: STATES.UserName,
+              clear_time: STATES.REMAIN_SECONDS,
+              clear_heart:STATES.REMAIN_LIFES
+            },"*");
             // 인터벌을 클리어
             window.clearInterval(state[STATES.INTERVAL]);
             // 게임 상태를 시작상태로 변경
@@ -111,6 +125,12 @@
             // 남은 타겟 수 초기화
             state[STATES.REMAIN_TARGETS] =
               Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
+
+            //VR모드 종료
+            const _currentScene = state[STATES.CURRENT_SCENE];
+            const scene = document.querySelector('a-scene');
+            scene.exitVR();
+
             console.log("[STATE:Global] 게임이 종료되었습니다");
           } else {
             const _error = new Error(

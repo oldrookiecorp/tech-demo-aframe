@@ -28,6 +28,9 @@
         GameState.STATES_OF_GAME.STARTED
       ) {
         state[KEYS_OF_STATE.REMAIN_TARGETS]++;
+        if(state[KEYS_OF_STATE.REMAIN_TARGETS] === state[KEYS_OF_STATE.NUMBER_OF_TARGETS]){
+          AFRAME.scenes[0].emit('stopGame');
+        }
       } else {
         const __ERROR = new Error("[STATE:Targets] 게임이 실행중이 아닙니다");
         console.log(__ERROR);

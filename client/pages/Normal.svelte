@@ -1,6 +1,5 @@
 <script context="module">
   import GameObject from "../entities/GameObject.svelte";
-  // import GameUi from "../entities/GameUi.svelte";
   import RoomTest from "../entities/RoomTest.svelte";
   import CheckAnswer from "../components/CheckAnswer.svelte"
   import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
@@ -21,22 +20,17 @@
         // 환경배치
         const scene = document.querySelector("a-scene");
         const copyArr = document.getElementsByClassName("env");
-        // const position = [
-        //   "-2 -4.5 4.1",
-        //   "4.541 -4.5 15.448",
-        //   "-8.404 -4.856 15.446",
-        //   "5 -4.5 3",
-        //   "-8.156 1.19 10.908",
-        // ];
         const position = [
-          "-2 -4.5 4.1",
-          "-8.404 -4.856 15.446",
-
-          "-8.156 1.19 10.908",
-          "5 -4.5 3",
-          "7.327 -4.72 14.503",
+          "-3.776 -4.5 0.971",
+          "-4.528 -4.856 20.005",
+          // 카펫
+          "0.4 -4.502 9.69",
+          // 빈백
+          "7.642 -4.856 15.446",
+          "0.007 1.157 19.498"
+          
         ];
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < position.length; j++) {
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
@@ -49,8 +43,9 @@
             const answerArr = document.getElementsByClassName("answer");
             const srcArr = [
               "assets/Puzzle/gltf/빈백_쿠션_코랄색/빈백_쿠션_코랄색.gltf",
+              "assets/Puzzle/gltf/볼캡_그레이_나이키/볼캡_그레이_나이키.gltf"
             ];
-            for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < srcArr.length; i++) {
               answerArr[i].setAttribute("src", srcArr[i]);
             }
             AFRAME.scenes[0].emit('startGame');
@@ -84,8 +79,12 @@
     position="20 -2 8"
   />
   <a-entity
-    light="type:  point;  intensity:0.5 castShadow: true;"
-    position="50 0 12"
+    light="type:  point;  intensity:0.4 castShadow: true;"
+    position="44.818 1.417 12.585"
+  />
+  <a-entity
+    light="type:  point;  intensity:0.4 castShadow: true;"
+    position="4.818 1.417 12.585"
   />
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />

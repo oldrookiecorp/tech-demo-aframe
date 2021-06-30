@@ -9,8 +9,7 @@
     "create-entry-scripts": "node server/config/create-client-entry-scripts.js",
     "pages-watch": "chokidar \"client/pages/**\" -c \"npm run create-entry-scripts\" --initial --silent",
     "start": "npm run create-entry-scripts && npm run webpack-build && node dist/bundle.js",
-    "dev": "concurrently \"npm:pages-watch\" \"npm:webpack-watch\"  \"nodemon dist/bundle.js\"",
-    "heroku-postbuild":"yarn build"
+    "dev": "concurrently \"npm:pages-watch\" \"npm:webpack-watch\"  \"nodemon dist/bundle.js\""
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +24,7 @@
   "dependencies": {
     "aframe": "^1.2.0",
     "aframe-state-component": "^7.1.0",
+    "axios": "^0.21.1",
     "chokidar": "^3.4.2",
     "chokidar-cli": "^2.1.0",
     "clean-webpack-plugin": "^3.0.0",

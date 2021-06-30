@@ -24,7 +24,7 @@
   shadow="cast: true; receive: true"
   src={ObjAssets.desk}
   class="env"
-  position="38 -4.5 4.1"
+  position="37.776 -4.5 0.971"
   scale="0.03 0.04 0.05"
   rotation="0 -90 0"
 />
@@ -32,10 +32,28 @@
 <!-- 책장 -->
 <a-gltf-model
   src={ObjAssets.shelf}
+  id="shelf"
   class="env"
   shadow="cast: true; receive: true"
-  position="31.596 -4.856 15.446"
-  rotation="0 90 0"
+  position="35.528 -4.856 20.005"
+  scale="1 1 1"
+  
+/>
+<a-gltf-model
+    shadow="cast: true; receive: true"
+    rotation="-180 80.9 -180"
+    class="env"
+    src={ObjAssets.Ecarpet}
+    scale="4 4 4"
+    position="39.6 -4.502 9.69"
+    id="Ecarpet"
+  />
+<a-gltf-model
+  shadow="cast: true; receive: true"
+  src={ObjAssets.modern__sofa}
+  position="20 -4 15"
+  scale="6 6 6"
+  rotation="0 180 0"
 />
 <!-- 정답 -->
 <!-- 빈백 -->
@@ -48,43 +66,24 @@
   rotation="0 -86.466 0"
 />
 <a-gltf-model
-  shadow="cast: true; receive: true"
+  src={ObjAssets.adidas}
   class="env answer"
-  scale="0.04 0.05 0.04"
-  position="32.156 1.19 10.908"
-  rotation="0 -45 0"
-  src={ObjAssets.book}
-/>
-<a-gltf-model
   shadow="cast: true; receive: true"
-  src={ObjAssets.modern__sofa}
-  position="20 -4 15"
-  scale="6 6 6"
-  rotation="0 180 0"
+  position="40.007 1.157 19.498"
+  scale="3.5 3.5 3.5"
+  rotation="0 -170.400 0"
 />
 
+
 {#if Hard}
-  <!-- carpet -->
-  <a-gltf-model
-    shadow="cast: true; receive: true"
-    check-answer
-    rotation="-180 80.9 -180"
-    class="env answer"
-    src={ObjAssets.Ecarpet}
-    scale="4 4 4"
-    position="-1.27 -4.61 9.69"
-    id="Ecarpet"
-  />
-  <a-gltf-model
-    shadow="cast: true; receive: true"
-    check-answer
-    rotation="-180 80.9 -180"
-    class="env"
-    src={ObjAssets.Scarpet}
-    scale="4 4 4"
-    position="39.6 -4.61 9.69"
-    id="Scarpet"
-  />
+<a-gltf-model
+shadow="cast: true; receive: true"
+class="env answer"
+src={ObjAssets.diningTable}
+scale="3 3 3"
+position="42.714 -4.524 7.2"
+id="diningTable"
+/>
   <!-- stand lamp -->
   <a-gltf-model
     shadow="cast: true; receive: true"
@@ -92,28 +91,20 @@
     class="env answer"
     src={ObjAssets.stand}
     scale="1 0.6 1"
-    position="8.1 -4.75 18.743"
+    position="48.927 -4.75 18.743"
     id="standLamp"
   />
-  <!-- cabinet -->
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer
     class="env answer"
-    src={ObjAssets.cabinet}
-    scale="1 0.6 1"
-    position="-7.643 -4.687 1.102"
-    id="cabinet"
+    src={ObjAssets.bluevase}
+    scale="3 3 3"
+    position="8.8 3.944 0.539"
+    id="bluevase"
   />
-  <!-- wood shelf -->
-  <a-gltf-model
-    sshadow="cast: true; receive: true"
-    class="env "
-    src={ObjAssets.woodShelf}
-    scale="0.023 0.03 0.03"
-    position="33.3 -3.687 1.102"
-    id="woodShelf"
-  />
+  
+  
 {/if}
 {#if Normal}
   <!-- stand lamp -->
@@ -123,7 +114,7 @@
     class="env answer"
     src={ObjAssets.stand}
     scale="1 0.6 1"
-    position="8.1 -4.75 18.743"
+    position="48.927 -4.75 18.743"
     id="standLamp"
   />
 {/if}
