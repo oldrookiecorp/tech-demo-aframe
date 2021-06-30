@@ -84,16 +84,6 @@ scale="3 3 3"
 position="42.714 -4.524 7.2"
 id="diningTable"
 />
-  <!-- stand lamp -->
-  <a-gltf-model
-    shadow="cast: true; receive: true"
-    check-answer
-    class="env answer"
-    src={ObjAssets.stand}
-    scale="1 0.6 1"
-    position="48.927 -4.75 18.743"
-    id="standLamp"
-  />
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer
@@ -106,7 +96,7 @@ id="diningTable"
   
   
 {/if}
-{#if Normal}
+{#if Normal || Hard}
   <!-- stand lamp -->
   <a-gltf-model
     shadow="cast: true; receive: true"
@@ -114,7 +104,7 @@ id="diningTable"
     class="env answer"
     src={ObjAssets.stand}
     scale="1 0.6 1"
-    position="48.927 -4.75 18.743"
+    position="8 -4.75 18.743"
     id="standLamp"
   />
 {/if}

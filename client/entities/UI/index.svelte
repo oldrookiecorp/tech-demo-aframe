@@ -22,6 +22,9 @@
         const data = this.data;
         const topElement = element.querySelector(".ui-container-top");
         const bottomElement = element.querySelector(".ui-container-bottom");
+      
+
+
         if (data[STATES.ENABLE_XR_MODE]) {
           // XR 모드로 들어간 경우
           topElement.setAttribute("position", {
@@ -34,6 +37,7 @@
             y: XR_BOTTOM_Y_THRESHOLD,
             z: 0,
           });
+          
         } else {
           // XR 모드에서 나온 경우
           topElement.setAttribute("position", {
@@ -64,6 +68,8 @@
   >
     <Targets />
   </a-entity>
+  <a-text id="fail"  value="Fail" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
+  <a-text id="correct" value="Correct" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
 
   <a-entity
     class="ui-container-bottom"

@@ -4,6 +4,7 @@
   import * as Targets from "./targets.svelte";
   import * as Timers from "./timer.svelte";
   import * as TimerLib from "../../lib/UI/Timer";
+  
   export const ENUMS = {
     [Game.KEYS_OF_STATE.STATE_OF_GAME]: Game.STATES_OF_GAME,
   };
@@ -26,6 +27,7 @@
     ...Targets.KEYS_OF_STATE,
     ...Timers.KEYS_OF_STATE,
     UserName: " ",
+    GameID: " ",
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
@@ -58,13 +60,17 @@
           ) {
             // 게임 상태를 시작상태로 변경
             state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].STARTED;
+
+
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();
 
-            // 유저 닉네임 확인
+            // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
             STATES.UserName = params.user;
+            STATES.GameID = params.gameId;
+
             console.log(`Username ; ${params.user}`);
 
             // 타이머 초기화
@@ -125,11 +131,10 @@
             // 남은 타겟 수 초기화
             state[STATES.REMAIN_TARGETS] =
               Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
-
+             
             //VR모드 종료
             const _currentScene = state[STATES.CURRENT_SCENE];
-            const scene = document.querySelector('a-scene');
-            scene.exitVR();
+            _currentScene.exitVR();
 
             console.log("[STATE:Global] 게임이 종료되었습니다");
           } else {

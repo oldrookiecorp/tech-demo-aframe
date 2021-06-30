@@ -7,6 +7,10 @@
   import UIGlobalComponent from "../components/UI/ui.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
+  import {getGamesEnv} from '../api/game.js';
+
+  const reponse = getGamesEnv(1);
+        console.log(reponse);
 </script>
 
 
@@ -37,7 +41,7 @@
 
           scene.appendChild(copyElement);
         }
-
+        
         this.el.addEventListener("click", function (evt) {
             console.log("start!");
             const answerArr = document.getElementsByClassName("answer");
