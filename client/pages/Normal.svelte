@@ -7,6 +7,10 @@
   import UIGlobalComponent from "../components/UI/ui.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
+
+  import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
+  import * as StateLib from "../lib/state/bind";
+
   import {getGamesEnv} from '../api/game.js';
 
   const reponse = getGamesEnv(1);
@@ -16,9 +20,6 @@
 
 <svelte:head>
   <script>
-
-    // 상태변수
-    let score = 0;
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -38,6 +39,7 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
+          copyElement.setAttribute("bind__check-answer", `${StateLib.bind([STATES.STATE_OF_GAME])}`);
 
           scene.appendChild(copyElement);
         }
@@ -79,7 +81,7 @@
   />
  
   <a-entity
-    light="type: point; castShadow: true; intensity: 0.2;"
+    light="type: point; castShadow: true; intensity: 0.3;"
     position="20 -2 8"
   />
   <a-entity

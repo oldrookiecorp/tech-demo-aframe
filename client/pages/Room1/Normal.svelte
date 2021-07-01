@@ -20,13 +20,6 @@
         // 환경배치
         const scene = document.querySelector("a-scene");
         const copyArr = document.getElementsByClassName("env");
-        // const position = [
-        //   "-2 -4.5 4.1",
-        //   "4.541 -4.5 15.448",
-        //   "-8.404 -4.856 15.446",
-        //   "5 -4.5 3",
-        //   "-8.156 1.19 10.908",
-        // ];
         const position = [
           "-3.776 -4.5 0.971",
           "-4.528 -4.856 20.005",

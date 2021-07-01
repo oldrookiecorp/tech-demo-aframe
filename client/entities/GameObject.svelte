@@ -1,5 +1,7 @@
 <script>
   import { default as ObjAsset, ObjAssets } from "../Assets/GameObject.svelte";
+  import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
+  import * as StateLib from "../lib/state/bind";
 
   export let Hard;
   export let Normal;
@@ -87,6 +89,7 @@ id="diningTable"
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer
+    bind__check-answer={StateLib.bind([STATES.STATE_OF_GAME])}
     class="env answer"
     src={ObjAssets.bluevase}
     scale="3 3 3"
@@ -101,6 +104,7 @@ id="diningTable"
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer
+    bind__check-answer={StateLib.bind([STATES.STATE_OF_GAME])}
     class="env answer"
     src={ObjAssets.stand}
     scale="1 0.6 1"

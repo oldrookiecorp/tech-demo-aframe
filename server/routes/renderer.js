@@ -6,6 +6,7 @@ const renderPage = (head, body, jsFilename, data) => {
 			<script>
 				const HYDRATION_DATA = ${JSON.stringify(data)}
 			</script>
+			<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
       <script src="https://aframe.io/releases/1.2.0/aframe.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.js"></script>
