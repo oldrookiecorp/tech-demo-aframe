@@ -44,9 +44,7 @@ pipeline {
 
           mail  to: 'dev.gihong2012@gmail.com',
                 subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!",
-                body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}:
-                
-                Check console output at ${BUILD_URL} to view the results."
+                body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}: Check console output at ${BUILD_URL} to view the results."
         }
 
         failure {
@@ -54,9 +52,7 @@ pipeline {
 
           mail  to: 'dev.gihong2012@gmail.com',
                 subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!",
-                body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}:
-                
-                Check console output at ${BUILD_URL} to view the results."
+                body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}: Check console output at ${BUILD_URL} to view the results."
         }
       }
     }
