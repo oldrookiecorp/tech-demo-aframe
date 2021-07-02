@@ -1,5 +1,4 @@
 <script context="module">
-  import state from "../components/state.svelte";
   import { default as DemoAssets, Assets } from "../assets/Demo.svelte";
   import PlaneBox from "../entities/PlaneBox.svelte";
   export const fileName = "Demo";

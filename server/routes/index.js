@@ -4,9 +4,9 @@ import { registRoute } from "./register";
 
 import * as Home from "../../client/pages/Home.svelte";
 import * as Fruits from "../../client/pages/Fruits.svelte";
-import * as Puzzle from "../../client/pages/Puzzle.svelte";
-import * as PuzzleN from "../../client/pages/PuzzleN.svelte";
-import * as PuzzleH from "../../client/pages/PuzzleH.svelte";
+import * as Easy from "../../client/pages/Easy.svelte";
+import * as Normal from "../../client/pages/Normal.svelte";
+import * as Hard from "../../client/pages/Hard.svelte";
 import * as Demo from "../../client/pages/Demo.svelte";
 import * as UI from "../../client/pages/UI.svelte";
 
@@ -19,22 +19,22 @@ export const getFileName = (fileNames, fileName) =>
 
 export const init = (instance) => {
   // Home
-  registRoute(instance, "/", Home, getFileName(files, Puzzle.fileName));
+  // registRoute(instance, "/", Easy, getFileName(files, Easy.fileName));
   // Fruits
   registRoute(instance, "/fruits", Fruits, getFileName(files, Fruits.fileName));
   //Puzzle
-  registRoute(instance, "/puzzle", Puzzle, getFileName(files, Puzzle.fileName));
+  registRoute(instance, "/", Easy, getFileName(files, Easy.fileName));
   registRoute(
     instance,
-    "/puzzleN",
-    PuzzleN,
-    getFileName(files, PuzzleN.fileName)
+    "/Normal",
+    Normal,
+    getFileName(files, Normal.fileName)
   );
   registRoute(
     instance,
-    "/puzzleH",
-    PuzzleH,
-    getFileName(files, PuzzleH.fileName)
+    "/Hard",
+    Hard,
+    getFileName(files, Hard.fileName)
   );
   // Demo
   registRoute(instance, "/demo", Demo, getFileName(files, Demo.fileName));

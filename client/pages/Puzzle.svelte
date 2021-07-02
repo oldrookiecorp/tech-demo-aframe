@@ -1,59 +1,64 @@
-<script src="https://cdn.jsdelivr.net/npm/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
-
 <script context = "module">
   import GameObject from "../entities/GameObject.svelte";
-  import GameUi from "../entities/GameUi.svelte";
+  // import GameUi from "../entities/GameUi.svelte";
   import Room from "../entities/Room.svelte";
-  export const fileName = "Puzzle";
   
+  // UI
+  import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
+  import UIStates from "../states/UI/index.svelte";
+  import UIGlobalComponent from "../components/UI/ui.svelte";
+  import { default as UIComponent } from "../entities/UI/index.svelte";
+  
+  export const fileName = "Puzzle";
+
 </script>
 <svelte:head>
 
   <script>
     
-    AFRAME.registerComponent("start-timer", {
-        init: function () {
-          const UISite = document.querySelector("a-camera");
+    // AFRAME.registerComponent("start-timer", {
+    //     init: function () {
+    //       const UISite = document.querySelector("a-camera");
 
-          this.el.addEventListener("click", function (evt) {
-            const timer = document.getElementById("timer");
-            let time = 180;
-            let min = "";
-            let sec = "";
-            const x = setInterval(function () {
-              min = parseInt(time / 60);
-              if(time % 60 < 10){
-                sec = `0${time % 60}`;
+    //       this.el.addEventListener("click", function (evt) {
+    //         const timer = document.getElementById("timer");
+    //         let time = 180;
+    //         let min = "";
+    //         let sec = "";
+    //         const x = setInterval(function () {
+    //           min = parseInt(time / 60);
+    //           if(time % 60 < 10){
+    //             sec = `0${time % 60}`;
 
-              }else {
-                sec = time % 60;
-              }
-              timer.setAttribute('value',`${min} : ${sec}`);
-              time--;
-              if (time < 0) {
-                clearInterval(x);
-                alert("game over!");
-                window.location.reload();
-              }
-            }, 1000);
-          });    
-      }
-    })
+    //           }else {
+    //             sec = time % 60;
+    //           }
+    //           timer.setAttribute('value',`${min} : ${sec}`);
+    //           time--;
+    //           if (time < 0) {
+    //             clearInterval(x);
+    //             alert("game over!");
+    //             window.location.reload();
+    //           }
+    //         }, 1000);
+    //       });    
+    //   }
+    // })
     // 상태변수
     let score = 0;
-    let heart = 5;
+    //let heart = 5;
       AFRAME.registerComponent("cursor-listener", {
         init: function () {           
           //목숨 배치
-          const UISite = document.querySelector("a-camera");
-          for (let i = 0; i < heart; i++) {
-            const element = document.createElement("a-image");
-            element.setAttribute("src", "./assets/Puzzle/environment/heart.png");
-            element.setAttribute("id", "heartImg");
-            element.setAttribute("scale", "0.2 0.2 0.2");
-            element.setAttribute("position", `${i/4.5+1.8} 1.5 -2`);
-            UISite.appendChild(element);
-          }
+          // const UISite = document.querySelector("a-camera");
+          // for (let i = 0; i < heart; i++) {
+          //   const element = document.createElement("a-image");
+          //   element.setAttribute("src", "./assets/Puzzle/environment/heart.png");
+          //   element.setAttribute("id", "heartImg");
+          //   element.setAttribute("scale", "0.2 0.2 0.2");
+          //   element.setAttribute("position", `${i/4.5+1.8} 1.5 -2`);
+          //   UISite.appendChild(element);
+          // }
           // 환경배치
           const scene = document.querySelector("a-scene");
           const copyArr = document.getElementsByClassName("env");
@@ -84,14 +89,14 @@
                 alert("이미 찾은 정답입니다.");
               } else {
                 alert("틀렸습니다.");
-                --heart;
-                if (heart === 0) {
-                  alert("game over!");
-                  window.location.reload();
-                } else {
-                  const heartImg = document.getElementById("heartImg");
-                  UISite.removeChild(heartImg);
-                }
+                //--heart;
+                // if (heart === 0) {
+                //   alert("game over!");
+                //   window.location.reload();
+                // } else {
+                //   const heartImg = document.getElementById("heartImg");
+                //   UISite.removeChild(heartImg);
+                // }
               }
             });
             scene.appendChild(copyElement);
@@ -115,7 +120,18 @@
       });
   </script>
 </svelte:head>
-  <a-scene physics="driver:ammo;debug:true; " >
+ <!-- UI 관련 스테이트 -->
+ <UIStates />
+ <!-- UI의 글로벌 컴포넌트 -->
+ <UIGlobalComponent />
+<a-scene
+id="scene-stage-1"
+ui
+vr-mode-ui
+inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+>
+<UIAssets />
+
     <a-entity
     light="type: ambient;  intensity: 0.5;"
     position="20 0 12"
@@ -129,7 +145,20 @@
     light="type:  point;  intensity:0.5 castShadow: true;"
     position="50 0 12"
   />
-  <GameUi scoreText={"0/2"}/>
+  <!-- <GameUi scoreText={"0/2"}/> -->
+
+  <a-entity laser-controls="hand: left" />
+  <a-entity laser-controls="hand: right" />
+  <a-entity camera look-controls wasd-controls>
+    <a-entity
+      cursor="fuse: true; fuseTimeout: 500"
+      position="0 0 -1"
+      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+      material="color: #fff; shader: flat; opacity: .8"
+    />
+    <UIComponent />
+  </a-entity>
   <GameObject/>
   <Room/>
-  </a-scene>
+
+</a-scene>

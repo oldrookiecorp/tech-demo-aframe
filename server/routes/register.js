@@ -23,7 +23,6 @@ export const registRoute = (
       defaultHTMLHeader(response);
       // 렌더 함수 실행
       const { html, head } = targetModule.default.render();
-      console.log(html);
       // 회신
       response.send(renderPage(head, html, fileName, additionalData));
     },
