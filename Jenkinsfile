@@ -29,6 +29,7 @@ pipeline {
     }
 
     stage("Deploy") {
+      agent any
       echo "Deploy"
 
       dir {
