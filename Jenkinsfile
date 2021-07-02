@@ -34,7 +34,7 @@ pipeline {
       steps {
         echo "Deploy"
 
-        dir {
+        dir('.') {
           sh '''
           docker-compose up --build
           '''
