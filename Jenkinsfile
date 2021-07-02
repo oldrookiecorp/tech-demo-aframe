@@ -30,12 +30,16 @@ pipeline {
 
     stage("Deploy") {
       agent any
-      echo "Deploy"
 
-      dir {
-        sh '''
-        docker-compose up --build
-        '''
+      steps {
+        echo "Deploy"
+
+        dir {
+          sh '''
+          docker-compose up --build
+          '''
+        }
+
       }
 
       post {
