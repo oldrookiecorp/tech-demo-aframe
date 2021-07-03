@@ -4,6 +4,7 @@
   import * as Targets from "./targets.svelte";
   import * as Timers from "./timer.svelte";
   import * as TimerLib from "../../lib/UI/Timer";
+  import {getGamesEnv} from '../../api/game';
   
   export const ENUMS = {
     [Game.KEYS_OF_STATE.STATE_OF_GAME]: Game.STATES_OF_GAME,
@@ -73,8 +74,19 @@
 
             console.log(`Username ; ${params.user}`);
 
-            // 타이머 초기화
             const _currentScene = state[STATES.CURRENT_SCENE];
+
+            // const reponse1 = getGamesEnv(1);
+            // console.log(`result: ${reponse1}`);
+            // //life 초기화
+            // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});  
+            console.log([STATES.LIFES]);
+
+            console.log(state[STATES.LIFES]);
+            console.log(state[STATES.REMAIN_LIFES]);
+
+            
+            // 타이머 초기화
             const _startedAt = state[STATES.STARTED_AT];
             const _seconds = state[STATES.SECONDS];
             // 인터벌 set

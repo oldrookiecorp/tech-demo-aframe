@@ -1,6 +1,5 @@
 <script context="module">
     import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
-    import * as StateLib from "../lib/state/bind";
 
 //this.data
   if (typeof window !== "undefined") {
@@ -14,7 +13,7 @@
       },
     init: function () {
       this.el.addEventListener("click", function (evt) {
-        console.log(`state_of_game: ${this.data[STATES.STATE_OF_GAME]}`);
+        // console.log(`state_of_game: ${this.data[STATES.STATE_OF_GAME]}`);
         const failTextUI = document.querySelector("#fail");
         const correctTextUI = document.querySelector("#correct");
           if (this.className === "env answer") {

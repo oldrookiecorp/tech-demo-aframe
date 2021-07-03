@@ -12,14 +12,15 @@
     AFRAME.registerComponent("ui-lifes", {
       schema: {
         // 제한 생명 수
+        //ui 하트 갯수
         [STATES.LIFES]: {
           type: "number",
-          default: 5,
+          default: [STATES.LIFES],
         },
         // 남은 생명 수
         [STATES.REMAIN_LIFES]: {
           type: "number",
-          default: 5,
+          default: [STATES.REMAIN_LIFES],
         },
       },
       update: function () {

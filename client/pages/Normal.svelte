@@ -11,10 +11,7 @@
   import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
   import * as StateLib from "../lib/state/bind";
 
-  import {getGamesEnv} from '../api/game.js';
-
-  const reponse = getGamesEnv(1);
-        console.log(reponse);
+  
 </script>
 
 
@@ -39,7 +36,7 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
-          copyElement.setAttribute("bind__check-answer", `${StateLib.bind([STATES.STATE_OF_GAME])}`);
+          // copyElement.setAttribute("bind__check-answer", `${StateLib.bind([STATES.STATE_OF_GAME])}`);
 
           scene.appendChild(copyElement);
         }

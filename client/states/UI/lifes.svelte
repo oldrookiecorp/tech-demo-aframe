@@ -1,5 +1,9 @@
 <script context="module">
   import { STATES, ENUMS, HANDLERS } from "./index.svelte";
+  import {getGamesEnv} from '../../api/game';
+
+  const reponse1 = getGamesEnv(1);
+  console.log(`result: ${reponse1}`);
   export const KEYS_OF_STATE = {
     LIFES: "lifes",
     REMAIN_LIFES: "remainLifes",
@@ -11,19 +15,22 @@
   };
 
   export const __INITIAL_STATES = {
-    [KEYS_OF_STATE.LIFES]: 5,
-    [KEYS_OF_STATE.REMAIN_LIFES]: 5,
+    [KEYS_OF_STATE.LIFES]: reponse1.heartCnt,
+    [KEYS_OF_STATE.REMAIN_LIFES]: reponse1.heartCnt,
   };
 
   export const __HANDLERS = {
-    [KEYS_OF_HANDLER.INIT_LIFES]: function (state) {
-      state[KEYS_OF_STATE.REMAIN_LIFES] = __INITIAL_STATES[KEYS_OF_STATE.LIFES];
+    [KEYS_OF_HANDLER.INIT_LIFES]: function (state,action) {
+      console.log(`action:`)
+      state[KEYS_OF_STATE.LIFES] = action;
+      state[KEYS_OF_STATE.REMAIN_LIFES] = state[KEYS_OF_STATE.LIFES];
     },
+
     // 남은 생명 setter
     [KEYS_OF_HANDLER.DECREASE_REMAIN_LIFES]: (state, action) => {
       if (state[STATES.STATE_OF_GAME] === ENUMS[STATES.STATE_OF_GAME].STARTED) {
         state[KEYS_OF_STATE.REMAIN_LIFES]--;
-        if (state[KEYS_OF_STATE.REMAIN_LIFES] <= 0) {
+        if (state[KEYS_OF_STATE.REMAIN_LIFES] < 0) {
           // 0보다 작아진 경우 게임을 종료처리
           console.log("[STATE:Lifes] 남은 라이프가 모두 소진되었습니다");
           state[STATES.CURRENT_SCENE].emit(HANDLERS.STOP_GAME);
