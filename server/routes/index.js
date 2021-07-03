@@ -26,13 +26,13 @@ export const init = (instance) => {
   registRoute(instance, "/", Easy, getFileName(files, Easy.fileName));
   registRoute(
     instance,
-    "/Normal",
+    "/normal",
     Normal,
     getFileName(files, Normal.fileName)
   );
   registRoute(
     instance,
-    "/Hard",
+    "/hard",
     Hard,
     getFileName(files, Hard.fileName)
   );

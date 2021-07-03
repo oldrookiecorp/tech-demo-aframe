@@ -1,5 +1,5 @@
 <script>
-  import { default as ObjAsset, ObjAssets } from "../Assets/GameObject.svelte";
+  import { default as ObjAsset, ObjAssets } from "../assets/GameObject.svelte";
   import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
   import * as StateLib from "../lib/state/bind";
 
