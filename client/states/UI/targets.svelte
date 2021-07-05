@@ -30,12 +30,12 @@
         state[KEYS_OF_STATE.REMAIN_TARGETS]++;
         if(state[KEYS_OF_STATE.REMAIN_TARGETS] === state[KEYS_OF_STATE.NUMBER_OF_TARGETS]){
           // 클라이언트로 데이터 전송
-            window.parent.postMessage({
-              functionName: "gameClear",
-              user_name: state[KEYS_OF_STATES.UserName],
-              clear_time: state[KEYS_OF_STATE.REMAIN_SECONDS],
-              clear_heart: state[KEYS_OF_STATE.REMAIN_LIFES]
-            },"*");
+            // window.parent.postMessage({
+            //   functionName: "gameClear",
+            //   user_name: state[STATES.UserName],
+            //   clear_time: state[STATES.REMAIN_SECONDS],
+            //   clear_heart: state[STATES.REMAIN_LIFES]
+            // },"*");
           AFRAME.scenes[0].emit('stopGame');
         }
       } else {

@@ -47,6 +47,7 @@
               clear_time: state[KEYS_OF_STATE.REMAIN_SECONDS],
               clear_heart: state[KEYS_OF_STATE.REMAIN_LIFES]
             },"*");
+            
           state[STATES.CURRENT_SCENE].emit(HANDLERS.STOP_GAME);
           
         }
