@@ -75,7 +75,7 @@
     "buffers": [
         {
             "byteLength": 4117024,
-            "uri": "블랙_스트라이프 카펫_binary.bin"
+            "uri": "ethnic_Carpet_binary.bin"
         }
     ],
     "cameras": [
@@ -92,34 +92,21 @@
     ],
     "images": [
         {
-            "name": "roughness_image_texture",
-            "uri": "블랙_스트라이프 카펫_images/roughness_image_texture.png",
-            "mimeType": "image/png"
-        },
-        {
-            "name": "normal_image_texture",
-            "uri": "블랙_스트라이프 카펫_images/normal_image_texture.png",
-            "mimeType": "image/png"
+            "name": "-E1-84-8B-E1-85-A6-E1-84-89-E1-85-B3-E1-84-82-E1-85-B5-E1-86-A8",
+            "uri": "ethnic_Carpet_images/-E1-84-8B-E1-85-A6-E1-84-89-E1-85-B3-E1-84-82-E1-85-B5-E1-86-A8.jpg",
+            "mimeType": "image/jpeg"
         }
     ],
     "materials": [
         {
             "pbrMetallicRoughness": {
-                "baseColorFactor": [
-                    0.023153364658355714,
-                    0.023153364658355714,
-                    0.023153364658355714,
-                    1.0
-                ],
-                "metallicFactor": 0.0,
-                "metallicRoughnessTexture": {
+                "baseColorTexture": {
                     "index": 0
-                }
+                },
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.49000000953674319
             },
-            "normalTexture": {
-                "index": 1
-            },
-            "name": "줄무늬 광택 용지",
+            "name": "천",
             "doubleSided": true
         }
     ],
@@ -166,7 +153,6 @@
         }
     ],
     "samplers": [
-        {},
         {}
     ],
     "scenes": [
@@ -180,14 +166,9 @@
     ],
     "textures": [
         {
-            "name": "roughness_image_texture",
+            "name": "texture141519",
             "sampler": 0,
             "source": 0
-        },
-        {
-            "name": "normal_image_texture",
-            "sampler": 1,
-            "source": 1
         }
     ],
     "scene": 0

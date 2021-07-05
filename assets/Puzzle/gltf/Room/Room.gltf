@@ -707,7 +707,7 @@
     "buffers": [
         {
             "byteLength": 24256,
-            "uri": "방_수정_육면_닫음_binary.bin"
+            "uri": "Room_binary.bin"
         }
     ],
     "cameras": [
@@ -725,7 +725,7 @@
     "images": [
         {
             "name": "Walnut dark-3A-3Abase_color-3A-3Aimage",
-            "uri": "방_수정_육면_닫음_images/Walnut dark-3A-3Abase_color-3A-3Aimage.jpg",
+            "uri": "Room_images/Walnut dark-3A-3Abase_color-3A-3Aimage.jpg",
             "mimeType": "image/jpeg"
         }
     ],

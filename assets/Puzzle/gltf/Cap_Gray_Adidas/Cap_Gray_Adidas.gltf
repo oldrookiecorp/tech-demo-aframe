@@ -391,7 +391,7 @@
     "buffers": [
         {
             "byteLength": 1085424,
-            "uri": "볼캡_그레이_나이키_binary.bin"
+            "uri": "Cap_Gray_Adidas_binary.bin"
         }
     ],
     "cameras": [
@@ -409,32 +409,32 @@
     "images": [
         {
             "name": "base_color_image_texture",
-            "uri": "볼캡_그레이_나이키_images/base_color_image_texture.jpg",
+            "uri": "Cap_Gray_Adidas_images/base_color_image_texture.jpg",
             "mimeType": "image/jpeg"
         },
         {
             "name": "ambient_occlusion_image_texture_roughness_image_texture",
-            "uri": "볼캡_그레이_나이키_images/ambient_occlusion_image_texture_roughness_image_texture.png",
+            "uri": "Cap_Gray_Adidas_images/ambient_occlusion_image_texture_roughness_image_texture.png",
             "mimeType": "image/png"
         },
         {
             "name": "sheen_color_image_texture",
-            "uri": "볼캡_그레이_나이키_images/sheen_color_image_texture.jpg",
+            "uri": "Cap_Gray_Adidas_images/sheen_color_image_texture.jpg",
             "mimeType": "image/jpeg"
         },
         {
             "name": "normal_image_texture",
-            "uri": "볼캡_그레이_나이키_images/normal_image_texture.png",
+            "uri": "Cap_Gray_Adidas_images/normal_image_texture.png",
             "mimeType": "image/png"
         },
         {
             "name": "head_mesh_N3D_Flannel Fabric_material_stack-3A-3Abase_color-3A-3Asampler",
-            "uri": "볼캡_그레이_나이키_images/head_mesh_N3D_Flannel Fabric_material_stack-3A-3Abase_color-3A-3Asampler.jpg",
+            "uri": "Cap_Gray_Adidas_images/head_mesh_N3D_Flannel Fabric_material_stack-3A-3Abase_color-3A-3Asampler.jpg",
             "mimeType": "image/jpeg"
         },
         {
             "name": "ambient_occlusion_image_texture_composited_roughness",
-            "uri": "볼캡_그레이_나이키_images/ambient_occlusion_image_texture_composited_roughness.png",
+            "uri": "Cap_Gray_Adidas_images/ambient_occlusion_image_texture_composited_roughness.png",
             "mimeType": "image/png"
         }
     ],

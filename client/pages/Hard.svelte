@@ -44,9 +44,9 @@
             console.log("start!");
             const answerArr = document.getElementsByClassName("answer");
             const srcArr = [
-              "assets/Puzzle/gltf/빈백_쿠션_코랄색/빈백_쿠션_코랄색.gltf",
-              "assets/Puzzle/gltf/볼캡_그레이_나이키/볼캡_그레이_나이키.gltf",
-              "assets/Puzzle/gltf/마블_식탁_큰_테라조무늬/마블_식탁_큰_테라조무늬.gltf"
+              "assets/Puzzle/gltf/beanbag_Choral/beanbag_Choral.gltf",
+              "assets/Puzzle/gltf/Cap_Gray_Nike/Cap_Gray_Nike.gltf",
+              "assets/Puzzle/gltf/Table_terazzo_Big/Table_terazzo_Big.gltf"
             ];
             for (let i = 0; i < srcArr.length; i++) {
               answerArr[i].setAttribute("src", srcArr[i]);

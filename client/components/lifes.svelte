@@ -4,7 +4,7 @@
       AFRAME.registerComponent("lifes", {
         schema: {
           remainLifes: {
-            type: "number",
+            // type: "number",
             default: 10,
           },
         },

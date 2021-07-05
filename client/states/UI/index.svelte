@@ -32,16 +32,21 @@
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
-
+  
   if (typeof window !== "undefined") {
+    let dataTest='';
+    getGamesEnv(1).then((response)=>{
+      dataTest = response;
+    })
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
+        // [STATES.LIFES]: dataTest.heartCnt,
+        // [STATES.REMAIN_LIFES]: dataTest.heartCnt,
         ...Lifes.__INITIAL_STATES,
         ...Targets.__INITIAL_STATES,
         ...Timers.__INITIAL_STATES,
         // [Timers.KEYS_OF_STATE.SECONDS]:TimeProps ,
-
         // [Timers.KEYS_OF_STATE.REMAIN_SECONDS]: TimeProps,
         [STATES.CURRENT_SCENE]: null,
       },
@@ -62,6 +67,8 @@
             // 게임 상태를 시작상태로 변경
             state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].STARTED;
 
+            console.log(dataTest);
+            console.log(dataTest.heartCnt);
 
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();

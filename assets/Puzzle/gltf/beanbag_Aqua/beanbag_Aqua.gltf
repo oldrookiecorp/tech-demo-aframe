@@ -8,44 +8,44 @@
         {
             "bufferView": 0,
             "componentType": 5126,
-            "count": 2426,
+            "count": 14302,
             "type": "VEC3",
             "max": [
-                0.11801574379205704,
-                0.5387107133865356,
-                0.11801551282405853
+                0.6472305655479431,
+                1.0007646083831788,
+                0.6502806544303894
             ],
             "min": [
-                -0.11801543831825257,
-                2.8967855314476767e-7,
-                -0.11801551282405853
+                -0.6449702382087708,
+                -0.0010617394000291825,
+                -0.6509640216827393
             ]
         },
         {
             "bufferView": 1,
             "componentType": 5126,
-            "count": 2426,
+            "count": 14302,
             "type": "VEC3"
         },
         {
             "bufferView": 2,
             "componentType": 5126,
-            "count": 2426,
+            "count": 14302,
             "type": "VEC4"
         },
         {
             "bufferView": 3,
             "componentType": 5126,
-            "count": 2426,
+            "count": 14302,
             "type": "VEC2"
         },
         {
             "bufferView": 4,
             "componentType": 5125,
-            "count": 13428,
+            "count": 83148,
             "type": "SCALAR",
             "max": [
-                2425.0
+                14301.0
             ],
             "min": [
                 0.0
@@ -56,76 +56,66 @@
         {
             "buffer": 0,
             "byteOffset": 0,
-            "byteLength": 29112,
+            "byteLength": 171624,
             "target": 34962
         },
         {
             "buffer": 0,
-            "byteOffset": 29112,
-            "byteLength": 29112,
+            "byteOffset": 171624,
+            "byteLength": 171624,
             "target": 34962
         },
         {
             "buffer": 0,
-            "byteOffset": 58224,
-            "byteLength": 38816,
+            "byteOffset": 343248,
+            "byteLength": 228832,
             "target": 34962
         },
         {
             "buffer": 0,
-            "byteOffset": 97040,
-            "byteLength": 19408,
+            "byteOffset": 572080,
+            "byteLength": 114416,
             "target": 34962
         },
         {
             "buffer": 0,
-            "byteOffset": 116448,
-            "byteLength": 53712,
+            "byteOffset": 686496,
+            "byteLength": 332592,
             "target": 34963
         }
     ],
     "buffers": [
         {
-            "byteLength": 170160,
-            "uri": "화병_블루_패턴_binary.bin"
+            "byteLength": 1019088,
+            "uri": "beanbag_Aqua_binary.bin"
         }
     ],
     "cameras": [
         {
             "perspective": {
-                "znear": 0.000012674860954575707,
+                "znear": 0.000041793191485339779,
                 "yfov": 0.527414858341217,
-                "zfar": 2.0,
+                "zfar": 2.2986254692077638,
                 "aspectRatio": 1.3333333730697632
             },
             "type": "perspective",
             "name": "working_cam"
-        },
-        {
-            "perspective": {
-                "znear": 0.000012674860954575707,
-                "yfov": 0.4578222930431366,
-                "zfar": 2.0,
-                "aspectRatio": 1.3333333730697632
-            },
-            "type": "perspective",
-            "name": "render_camera_n3d"
         }
     ],
     "images": [
         {
             "name": "base_color_image_texture",
-            "uri": "화병_블루_패턴_images/base_color_image_texture.jpg",
+            "uri": "beanbag_Aqua_images/base_color_image_texture.jpg",
             "mimeType": "image/jpeg"
         },
         {
-            "name": "roughness_image_texture",
-            "uri": "화병_블루_패턴_images/roughness_image_texture.png",
+            "name": "roughness_image_texture_metallic_image_texture",
+            "uri": "beanbag_Aqua_images/roughness_image_texture_metallic_image_texture.png",
             "mimeType": "image/png"
         },
         {
             "name": "normal_image_texture",
-            "uri": "화병_블루_패턴_images/normal_image_texture.png",
+            "uri": "beanbag_Aqua_images/normal_image_texture.png",
             "mimeType": "image/png"
         }
     ],
@@ -135,7 +125,6 @@
                 "baseColorTexture": {
                     "index": 0
                 },
-                "metallicFactor": 0.0,
                 "metallicRoughnessTexture": {
                     "index": 1
                 }
@@ -143,13 +132,13 @@
             "normalTexture": {
                 "index": 2
             },
-            "name": "St Cecilia Granite",
+            "name": "Anodic Powder Paint",
             "doubleSided": true
         }
     ],
     "meshes": [
         {
-            "name": "medium_vase_bottle_mesh",
+            "name": "bean_bag_chair_mesh",
             "primitives": [
                 {
                     "attributes": {
@@ -167,42 +156,32 @@
     "nodes": [
         {
             "translation": [
-                1.243362545967102,
-                1.365452527999878,
-                1.5046786069869996
+                0.550000011920929,
+                0.3199999928474426,
+                0.550000011920929
             ],
             "rotation": [
-                -0.24030551314353944,
-                0.31157001852989199,
-                0.08176547288894654,
-                0.9156919717788696
+                -0.12059047073125839,
+                0.379409521818161,
+                0.04995020851492882,
+                0.9159756302833557
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9999999403953552
             ],
             "camera": 0,
             "name": "working_cam_n3d"
         },
         {
             "translation": [
-                0.4999999403953552,
-                0.29999998211860659,
-                0.5
+                -0.001130180316977203,
+                0.0010617394000291825,
+                0.00034168243291787803
             ],
-            "rotation": [
-                -0.12059047818183899,
-                0.379409521818161,
-                0.04995020478963852,
-                0.9159756302833557
-            ],
-            "scale": [
-                1.0000001192092896,
-                1.0,
-                0.9999999403953552
-            ],
-            "camera": 1,
-            "name": "render_camera_n3d"
-        },
-        {
             "mesh": 0,
-            "name": "medium_vase_bottle_mesh"
+            "name": "bean_bag_chair_mesh"
         }
     ],
     "samplers": [
@@ -211,8 +190,7 @@
     "scenes": [
         {
             "nodes": [
-                1,
-                2
+                1
             ],
             "name": "scene"
         }
@@ -224,7 +202,7 @@
             "source": 0
         },
         {
-            "name": "roughness_image_texture",
+            "name": "roughness_image_texture_metallic_image_texture",
             "sampler": 0,
             "source": 1
         },

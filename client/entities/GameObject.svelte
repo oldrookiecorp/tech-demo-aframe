@@ -107,8 +107,8 @@ id="diningTable"
     bind__check-answer={StateLib.bind([STATES.STATE_OF_GAME])}
     class="env answer"
     src={ObjAssets.stand}
-    scale="1 0.6 1"
-    position="8 -4.75 18.743"
+    scale="10 10 10"
+    position="8.01 -4.499 19.92"
     id="standLamp"
   />
 {/if}

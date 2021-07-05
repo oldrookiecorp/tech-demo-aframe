@@ -87,7 +87,7 @@
     "buffers": [
         {
             "byteLength": 143568,
-            "uri": "마블_식탁_테라조무늬_binary.bin"
+            "uri": "Table_terazzo_binary.bin"
         }
     ],
     "cameras": [
@@ -105,17 +105,17 @@
     "images": [
         {
             "name": "base_color_image_texture",
-            "uri": "마블_식탁_테라조무늬_images/base_color_image_texture.jpg",
+            "uri": "Table_terazzo_images/base_color_image_texture.jpg",
             "mimeType": "image/jpeg"
         },
         {
             "name": "roughness_image_texture",
-            "uri": "마블_식탁_테라조무늬_images/roughness_image_texture.png",
+            "uri": "Table_terazzo_images/roughness_image_texture.png",
             "mimeType": "image/png"
         },
         {
             "name": "normal_image_texture",
-            "uri": "마블_식탁_테라조무늬_images/normal_image_texture.png",
+            "uri": "Table_terazzo_images/normal_image_texture.png",
             "mimeType": "image/png"
         }
     ],

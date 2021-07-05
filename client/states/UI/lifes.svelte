@@ -2,8 +2,10 @@
   import { STATES, ENUMS, HANDLERS } from "./index.svelte";
   import {getGamesEnv} from '../../api/game';
 
-  const reponse1 = getGamesEnv(1);
-  console.log(`result: ${reponse1}`);
+  // const reponse1 = getGamesEnv(1);
+  // console.log(`result: ${reponse1}`);
+  
+
   export const KEYS_OF_STATE = {
     LIFES: "lifes",
     REMAIN_LIFES: "remainLifes",
@@ -15,14 +17,19 @@
   };
 
   export const __INITIAL_STATES = {
-    [KEYS_OF_STATE.LIFES]: reponse1.heartCnt,
-    [KEYS_OF_STATE.REMAIN_LIFES]: reponse1.heartCnt,
+    
+    [KEYS_OF_STATE.LIFES]: 3,
+    [KEYS_OF_STATE.REMAIN_LIFES]: 3,
   };
+  
+
 
   export const __HANDLERS = {
     [KEYS_OF_HANDLER.INIT_LIFES]: function (state,action) {
-      console.log(`action:`)
-      state[KEYS_OF_STATE.LIFES] = action;
+  
+      // state[KEYS_OF_STATE.LIFES] = dataTest;
+      // console.log(`result33: ${state[KEYS_OF_STATE.LIFES]}`);
+
       state[KEYS_OF_STATE.REMAIN_LIFES] = state[KEYS_OF_STATE.LIFES];
     },
 

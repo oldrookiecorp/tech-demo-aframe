@@ -87,7 +87,7 @@
     "buffers": [
         {
             "byteLength": 1019088,
-            "uri": "빈백_쿠션_아쿠아색_binary.bin"
+            "uri": "beanbag_Choral_binary.bin"
         }
     ],
     "cameras": [
@@ -105,17 +105,17 @@
     "images": [
         {
             "name": "base_color_image_texture",
-            "uri": "빈백_쿠션_아쿠아색_images/base_color_image_texture.jpg",
+            "uri": "beanbag_Choral_images/base_color_image_texture.jpg",
             "mimeType": "image/jpeg"
         },
         {
             "name": "roughness_image_texture_metallic_image_texture",
-            "uri": "빈백_쿠션_아쿠아색_images/roughness_image_texture_metallic_image_texture.png",
+            "uri": "beanbag_Choral_images/roughness_image_texture_metallic_image_texture.png",
             "mimeType": "image/png"
         },
         {
             "name": "normal_image_texture",
-            "uri": "빈백_쿠션_아쿠아색_images/normal_image_texture.png",
+            "uri": "beanbag_Choral_images/normal_image_texture.png",
             "mimeType": "image/png"
         }
     ],
