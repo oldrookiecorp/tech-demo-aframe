@@ -100,13 +100,13 @@ id="diningTable"
   
 {/if}
 {#if Normal || Hard}
-  <!-- stand lamp -->
+  <!-- open box -->
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer
     bind__check-answer={StateLib.bind([STATES.STATE_OF_GAME])}
     class="env answer"
-    src={ObjAssets.stand}
+    src={ObjAssets.openBox}
     scale="10 10 10"
     position="8.01 -4.499 19.92"
     id="standLamp"

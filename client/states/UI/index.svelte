@@ -16,6 +16,7 @@
     ...Targets.KEYS_OF_HANDLER,
     ...Timers.KEYS_OF_HANDLER,
     SET_CURRENT_SCENE: "setCurrentScene",
+    INITIAL_WITH_API : 'initWithAPI',
     // 실제 UI의 메인 실행 함수
     START_GAME: "startGame",
     // 실제 UI의 메인 종료 함수
@@ -27,17 +28,20 @@
     ...Lifes.KEYS_OF_STATE,
     ...Targets.KEYS_OF_STATE,
     ...Timers.KEYS_OF_STATE,
-    UserName: " ",
-    GameID: " ",
+    UserName: "UserName",
+    GameID: "GameID",
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
   
   if (typeof window !== "undefined") {
     let dataTest='';
-    getGamesEnv(1).then((response)=>{
-      dataTest = response;
-    })
+    // getGamesEnv(1).then((response)=>{
+    //   dataTest = response;
+    // })
+    // getGamesEnv(1).then(
+    //   (result)=>{}
+    // )
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
@@ -49,6 +53,7 @@
         // [Timers.KEYS_OF_STATE.SECONDS]:TimeProps ,
         // [Timers.KEYS_OF_STATE.REMAIN_SECONDS]: TimeProps,
         [STATES.CURRENT_SCENE]: null,
+        [STATES.UserName]: "ss"
       },
       handlers: {
         ...Game.__HANDLERS,
@@ -59,6 +64,7 @@
           state[STATES.CURRENT_SCENE] = action[STATES.CURRENT_SCENE];
           state[STATES.CURRENT_SCENE_ID] = action[STATES.CURRENT_SCENE_ID];
         },
+
         [HANDLERS.START_GAME]: (state) => {
           // 게임이 실행중이 아닌경우
           if (
@@ -66,9 +72,6 @@
           ) {
             // 게임 상태를 시작상태로 변경
             state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].STARTED;
-
-            console.log(dataTest);
-            console.log(dataTest.heartCnt);
 
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();
@@ -87,10 +90,10 @@
             // console.log(`result: ${reponse1}`);
             // //life 초기화
             // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});  
-            console.log([STATES.LIFES]);
+            console.log(`dd:${state[STATES.UserName]}`);
 
-            console.log(state[STATES.LIFES]);
-            console.log(state[STATES.REMAIN_LIFES]);
+            // console.log(state[STATES.LIFES]);
+            // console.log(state[STATES.REMAIN_LIFES]);
 
             
             // 타이머 초기화
@@ -107,6 +110,13 @@
               if (__remainSeconds <= 0) {
                 // 시간이 모두 소진된 경우 게임 종료 처리
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
+                // 클라이언트로 데이터 전송
+                window.parent.postMessage({
+                  functionName: "gameOver",
+                  user_name: state[STATES.UserName],
+                  clear_time: state[STATES.REMAIN_SECONDS],
+                  clear_heart: state[STATES.REMAIN_LIFES]
+                },"*");
                 _currentScene.emit(HANDLERS.STOP_GAME);
               } else {
                 _currentScene.emit(HANDLERS.SET_REMAIN_SECONDS, {
@@ -127,13 +137,6 @@
           if (
             state[STATES.STATE_OF_GAME] === ENUMS[STATES.STATE_OF_GAME].STARTED
           ) {
-            // 클라이언트로 데이터 전송
-            window.parent.postMessage({
-              functionName: "gameClear",
-              user_name: STATES.UserName,
-              clear_time: STATES.REMAIN_SECONDS,
-              clear_heart:STATES.REMAIN_LIFES
-            },"*");
             // 인터벌을 클리어
             window.clearInterval(state[STATES.INTERVAL]);
             // 게임 상태를 시작상태로 변경
@@ -164,6 +167,12 @@
             throw _error;
           }
         },
+        [HANDLERS.INITIAL_WITH_API](state , action){
+          state[STATES.LIFES] = action[STATES.LIFES];
+          state[STATES.REMAIN_LIFES] = action[STATES.LIFES];
+          state[STATES.SECONDS] = action[STATES.SECONDS];
+          state[STATES.SECONDS] = action[STATES.SECONDS];
+        }
       },
     });
     console.log("state registered", HANDLERS, STATES);

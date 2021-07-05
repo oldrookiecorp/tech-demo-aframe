@@ -18,8 +18,8 @@
 
   export const __INITIAL_STATES = {
     
-    [KEYS_OF_STATE.LIFES]: 3,
-    [KEYS_OF_STATE.REMAIN_LIFES]: 3,
+    [KEYS_OF_STATE.LIFES]: 6,
+    [KEYS_OF_STATE.REMAIN_LIFES]: 6,
   };
   
 
@@ -37,10 +37,18 @@
     [KEYS_OF_HANDLER.DECREASE_REMAIN_LIFES]: (state, action) => {
       if (state[STATES.STATE_OF_GAME] === ENUMS[STATES.STATE_OF_GAME].STARTED) {
         state[KEYS_OF_STATE.REMAIN_LIFES]--;
-        if (state[KEYS_OF_STATE.REMAIN_LIFES] < 0) {
+        if (state[KEYS_OF_STATE.REMAIN_LIFES] <= 0) {
           // 0보다 작아진 경우 게임을 종료처리
           console.log("[STATE:Lifes] 남은 라이프가 모두 소진되었습니다");
+          // 클라이언트로 데이터 전송
+          window.parent.postMessage({
+              functionName: "gameOver",
+              user_name: state[KEYS_OF_STATES.UserName],
+              clear_time: state[KEYS_OF_STATE.REMAIN_SECONDS],
+              clear_heart: state[KEYS_OF_STATE.REMAIN_LIFES]
+            },"*");
           state[STATES.CURRENT_SCENE].emit(HANDLERS.STOP_GAME);
+          
         }
       } else {
         const __ERROR = new Error("[STATE:Lifes] 게임이 실행중이 아닙니다");

@@ -1,7 +1,7 @@
 <script context="module">
     export const ObjAssets = {
       Ecarpet:"#Ecarpet",
-      stand: "#stand",   
+      openBox: "#openBox",   
       desk: "#desk",
       shelf: "#shelf",
       npc: "#npc",
@@ -31,7 +31,7 @@
 
 
     <!-- hard mode -->
-    <a-asset-item id="stand"src="assets/Puzzle/gltf/PaperBox_Open/PaperBox_Open.gltf"/>
+    <a-asset-item id="openBox"src="assets/Puzzle/gltf/PaperBox_Open/PaperBox_Open.gltf"/>
     <a-asset-item id="bluevase"src="assets/Puzzle/gltf/flowerpot_marbleBlue/flowerpot_marbleBlue.gltf"/>
 
     <a-asset-item id="diningTable"src="assets/Puzzle/gltf/Table_terazzo/Table_terazzo.gltf"/>
