@@ -114,8 +114,8 @@
                 window.parent.postMessage({
                   functionName: "gameOver",
                   user_name: state[STATES.UserName],
-                  clear_time: state[STATES.REMAIN_SECONDS],
-                  clear_heart: state[STATES.REMAIN_LIFES]
+                  cur_time: state[STATES.REMAIN_SECONDS],
+                  cur_heart: state[STATES.REMAIN_LIFES]
                 },"*");
                 _currentScene.emit(HANDLERS.STOP_GAME);
               } else {
