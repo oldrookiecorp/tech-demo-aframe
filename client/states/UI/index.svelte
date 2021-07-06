@@ -38,8 +38,8 @@
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
-        // ...Targets.__INITIAL_STATES,
-        ...Timers.__INITIAL_STATES,
+        [STATES.INTERVAL]: null,
+        [STATES.STARTED_AT]: null,
         [STATES.CURRENT_SCENE]: null,
         [STATES.UserName]: "userName",
       },
@@ -80,12 +80,11 @@
             const _currentScene = state[STATES.CURRENT_SCENE];
             //life 초기화
             _currentScene.emit("initLifes");
+
             //target obj 초기화
             _currentScene.emit("initTargets");
 
             // 타이머 초기화
-            _currentScene.emit("initTimers");
-
             const _startedAt = state[STATES.STARTED_AT];
             const _seconds = state[STATES.SECONDS];
             // 인터벌 set
@@ -138,19 +137,19 @@
 
             // 인터벌을 클리어
             window.clearInterval(state[STATES.INTERVAL]);
-            // 게임 상태를 시작상태로 변경
+            // 게임 상태를 끝남상태로 변경
             state[STATES.STATE_OF_GAME] = ENUMS[STATES.STATE_OF_GAME].FINISHED;
             // 스테이트의 인터벌 초기화
             state[STATES.INTERVAL] = null;
             // 스테이트의 시작일자 초기화
             state[STATES.STARTED_AT] = null;
             // 남은 라이프 멈춤
-            state[STATES.REMAIN_LIFES] = Lifes.__INITIAL_STATES[STATES.LIFES];
+            // state[STATES.REMAIN_LIFES] = Lifes.__INITIAL_STATES[STATES.LIFES];
             // 남은 시간 멈춤
             _currentScene.emit("startTimer");
-            // 남은 타겟 수 초기화
-            state[STATES.REMAIN_TARGETS] =
-              Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
+            // 남은 타겟 수 멈춤
+            // state[STATES.REMAIN_TARGETS] =
+            //   Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
 
             //VR모드 종료
             _currentScene.exitVR();

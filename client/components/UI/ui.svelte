@@ -10,7 +10,7 @@
           [STATES.CURRENT_SCENE]: _el,
           [STATES.CURRENT_SCENE_ID]: parseInt(_el.getAttribute("id")) || 1,
         });
-
+        _el.emit("initTimers");
         _el.addEventListener("enter-vr", () => {
           console.log("[UI COMPONENT] WILL ENTER VR MODE");
           _el.emit(HANDLERS.SET_ENABLE_XR_MODE, {
