@@ -8,12 +8,14 @@
         // 게임실행여부
         [STATES.STATE_OF_GAME]: {
           type: "string",
-          default: " ",
+          default: [STATES.STATE_OF_GAME],
         },
       },
     init: function () {
+      console.log(this.data[STATES.STATE_OF_GAME]);
       this.el.addEventListener("click", function (evt) {
-        // console.log(`state_of_game: ${this.data[STATES.STATE_OF_GAME]}`);
+      console.log(`ddd:${STATES.STATE_OF_GAME}`);
+        
         const failTextUI = document.querySelector("#fail");
         const correctTextUI = document.querySelector("#correct");
           if (this.className === "env answer") {
