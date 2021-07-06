@@ -1,4 +1,8 @@
 <script context="module">
+  import { STATES, ENUMS, HANDLERS } from "./index.svelte";
+
+  import {getGamesEnv} from '../../api/game';
+
   export const KEYS_OF_STATE = {
     SECONDS: "seconds",
     INTERVAL: "interval",
@@ -26,15 +30,15 @@
   export const __HANDLERS = {
     // 여기를 보기
     [KEYS_OF_HANDLER.INIT_TIMERS]: function (state, action) {
-      state = {
-        __INITIAL_STATES,
-        ...action,
-      };
+      getGamesEnv(state[STATES.CURRENT_SCENE_ID]).then((response)=>{
+        state[KEYS_OF_STATE.SECONDS] = response.limitTime;
+        state[KEYS_OF_STATE.REMAIN_SECONDS] = state[KEYS_OF_STATE.SECONDS];
+      })
     },
     // 남은 시간 setter
     [KEYS_OF_HANDLER.SET_REMAIN_SECONDS]: (state, action) =>
-      (state[KEYS_OF_STATE.REMAIN_SECONDS] =
-        action[KEYS_OF_STATE.REMAIN_SECONDS]),
+      {state[KEYS_OF_STATE.REMAIN_SECONDS] =
+        action[KEYS_OF_STATE.REMAIN_SECONDS]},
     // 타이머 시작하기
     [KEYS_OF_HANDLER.START_TIMER]: (state, action) => {
       state[KEYS_OF_STATE.INTERVAL] = action[KEYS_OF_STATE.INTERVAL];
