@@ -5,6 +5,7 @@
     AFRAME.registerComponent("ui", {
       init() {
         const _el = this.el;
+
         _el.emit(HANDLERS.SET_CURRENT_SCENE, {
           [STATES.CURRENT_SCENE]: _el,
           [STATES.CURRENT_SCENE_ID]: parseInt(_el.getAttribute("id")) || 1,

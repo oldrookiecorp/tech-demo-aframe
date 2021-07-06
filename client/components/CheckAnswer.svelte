@@ -4,17 +4,15 @@
 //this.data
   if (typeof window !== "undefined") {
       AFRAME.registerComponent("check-answer", {
-        schema: {
-        // 게임실행여부
-        [STATES.STATE_OF_GAME]: {
-          type: "string",
-          default: [STATES.STATE_OF_GAME],
-        },
-      },
+      //   schema: {
+      //   // 게임실행여부
+      //   [STATES.STATE_OF_GAME]: {
+      //     type: "string",
+      //     default: [STATES.STATE_OF_GAME],
+      //   },
+      // },
     update: function () {
-      console.log(this.data[STATES.STATE_OF_GAME]);
       this.el.addEventListener("click", function (evt) {
-      console.log(`ddd:${STATES.STATE_OF_GAME}`);
         
         const failTextUI = document.querySelector("#fail");
         const correctTextUI = document.querySelector("#correct");
