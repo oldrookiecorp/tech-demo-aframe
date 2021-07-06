@@ -2,6 +2,8 @@
   import * as GameState from "./game.svelte";
   import { STATES } from "./index.svelte";
   import {postClearGame} from '../../api/game';
+  import {getGamesEnv} from '../../api/game';
+
 
   export const KEYS_OF_STATE = {
     NUMBER_OF_TARGETS: "numberOfTargets",
@@ -20,7 +22,10 @@
 
   export const __HANDLERS = {
     [KEYS_OF_HANDLER.INIT_TARGETS]: function (state) {
-      state[STATES.REMAIN_TARGETS] = __INITIAL_STATES[STATES.NUMBER_OF_TARGETS];
+      getGamesEnv(state[STATES.CURRENT_SCENE_ID]).then((response)=>{
+        state[STATES.NUMBER_OF_TARGETS] = response.objCnt;
+        state[STATES.REMAIN_TARGETS]= __INITIAL_STATES[STATES.REMAIN_TARGETS];
+      })
     },
     // 남은 타겟 setter
     [KEYS_OF_HANDLER.DECREASE_REMAIN_TARGETS]: (state) => {

@@ -35,17 +35,10 @@
   };
   
   if (typeof window !== "undefined") {
-    let dataTest='';
-    // getGamesEnv(1).then((response)=>{
-    //   dataTest = response;
-    // })
-    // getGamesEnv(1).then(
-    //   (result)=>{}
-    // )
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
-        ...Targets.__INITIAL_STATES,
+        // ...Targets.__INITIAL_STATES,
         ...Timers.__INITIAL_STATES,
 
         [STATES.CURRENT_SCENE]: null,
@@ -83,7 +76,8 @@
             const _currentScene = state[STATES.CURRENT_SCENE];
             //life 초기화
             _currentScene.emit("initLifes");
-
+            //target obj 초기화
+            _currentScene.emit("initTargets");
 
             
             // 타이머 초기화

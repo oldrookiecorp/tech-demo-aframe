@@ -21,7 +21,7 @@
         const scene = document.querySelector("a-scene");
 
         scene.enterVR();
-        AFRAME.scenes[0].emit('initLifes');
+        
         const copyArr = document.getElementsByClassName("env");
         const position = [
           "-3.776 -4.5 0.971",

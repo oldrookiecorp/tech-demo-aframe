@@ -18,6 +18,8 @@
       init: function () {
         // 환경배치
         const scene = document.querySelector("a-scene");
+        scene.enterVR();
+
         const copyArr = document.getElementsByClassName("env");
         const position = [
           "-3.776 -4.5 0.971",
