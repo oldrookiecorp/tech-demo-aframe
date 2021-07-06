@@ -40,7 +40,6 @@
         ...Game.__INITIAL_STATES,
         // ...Targets.__INITIAL_STATES,
         ...Timers.__INITIAL_STATES,
-
         [STATES.CURRENT_SCENE]: null,
         [STATES.UserName]: "userName"
       },
@@ -81,6 +80,8 @@
 
             
             // 타이머 초기화
+            _currentScene.emit("initTimers");
+
             const _startedAt = state[STATES.STARTED_AT];
             const _seconds = state[STATES.SECONDS];
             // 인터벌 set
@@ -94,12 +95,17 @@
               if (__remainSeconds <= 0) {
                 // 시간이 모두 소진된 경우 게임 종료 처리
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
+                
                 // 클라이언트로 데이터 전송
                 window.parent.postMessage({
                   functionName: "gameOver",
                   user_name: state[STATES.UserName],
+                  cur_obj: state[STATES.REMAIN_TARGETS],
                   cur_time: state[STATES.REMAIN_SECONDS],
-                  cur_heart: state[STATES.REMAIN_LIFES]
+                  cur_heart: state[STATES.REMAIN_LIFES],
+                  total_time: state[STATES.SECONDS],
+                  total_heart: state[STATES.LIFES],
+                  total_obj: state[STATES.NUMBER_OF_TARGETS]
                 },"*");
                 _currentScene.emit(HANDLERS.STOP_GAME);
               } else {
@@ -121,6 +127,8 @@
           if (
             state[STATES.STATE_OF_GAME] === ENUMS[STATES.STATE_OF_GAME].STARTED
           ) {
+            const _currentScene = state[STATES.CURRENT_SCENE];
+
             // 인터벌을 클리어
             window.clearInterval(state[STATES.INTERVAL]);
             // 게임 상태를 시작상태로 변경
@@ -129,17 +137,15 @@
             state[STATES.INTERVAL] = null;
             // 스테이트의 시작일자 초기화
             state[STATES.STARTED_AT] = null;
-            // 남은 라이프 초기화
+            // 남은 라이프 멈춤
             state[STATES.REMAIN_LIFES] = Lifes.__INITIAL_STATES[STATES.LIFES];
-            // 남은 시간 초기화
-            state[STATES.REMAIN_SECONDS] =
-              Timers.__INITIAL_STATES[STATES.SECONDS];
+            // 남은 시간 멈춤
+            _currentScene.emit("startTimer");
             // 남은 타겟 수 초기화
             state[STATES.REMAIN_TARGETS] =
               Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
              
             //VR모드 종료
-            const _currentScene = state[STATES.CURRENT_SCENE];
             _currentScene.exitVR();
 
             console.log("[STATE:Global] 게임이 종료되었습니다");

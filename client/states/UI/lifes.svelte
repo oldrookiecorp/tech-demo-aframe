@@ -37,9 +37,13 @@
           // 클라이언트로 데이터 전송
           window.parent.postMessage({
               functionName: "gameOver",
-              user_name: state[KEYS_OF_STATE.UserName],
-              clear_time: state[KEYS_OF_STATE.REMAIN_SECONDS],
-              clear_heart: state[KEYS_OF_STATE.REMAIN_LIFES]
+              user_name: state[STATES.UserName],
+              cur_obj: state[STATES.REMAIN_TARGETS],
+              cur_time: state[STATES.REMAIN_SECONDS],
+              cur_heart: state[STATES.REMAIN_LIFES],
+              total_time: state[STATES.SECONDS],
+              total_heart: state[STATES.LIFES],
+              total_obj: state[STATES.NUMBER_OF_TARGETS]
             },"*");
             
           state[STATES.CURRENT_SCENE].emit(HANDLERS.STOP_GAME);
