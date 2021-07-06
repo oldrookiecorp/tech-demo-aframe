@@ -38,8 +38,6 @@
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
-        // ...Targets.__INITIAL_STATES,
-        //...Timers.__INITIAL_STATES,
         [STATES.INTERVAL]: null,
         [STATES.STARTED_AT]: null,
         [STATES.CURRENT_SCENE]: null,
