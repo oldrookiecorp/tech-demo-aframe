@@ -10,4 +10,11 @@ export const getGamesEnv = async (id) => {
   }
 };
 
-
+export const postClearGame = async(data) => {
+  try{
+    const reponse = await axios.post(`https://syu-clubs.com/api/clear-games`,data);
+    return reponse.data;
+  }catch(e){
+    return e;
+  }
+}

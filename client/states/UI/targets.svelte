@@ -1,6 +1,7 @@
 <script context="module">
   import * as GameState from "./game.svelte";
   import { STATES } from "./index.svelte";
+  import {postClearGame} from '../../api/game';
 
   export const KEYS_OF_STATE = {
     NUMBER_OF_TARGETS: "numberOfTargets",
@@ -29,13 +30,22 @@
       ) {
         state[KEYS_OF_STATE.REMAIN_TARGETS]++;
         if(state[KEYS_OF_STATE.REMAIN_TARGETS] === state[KEYS_OF_STATE.NUMBER_OF_TARGETS]){
+          const dataObj = {
+            "username" : "test",
+            "stage" : state[STATES.CURRENT_SCENE_ID],
+            "clear_time" : state[STATES.REMAIN_SECONDS],
+            "clear_heart" : state[STATES.REMAIN_LIFES]
+          }
+
           // 클라이언트로 데이터 전송
-            // window.parent.postMessage({
-            //   functionName: "gameClear",
-            //   user_name: state[STATES.UserName],
-            //   clear_time: state[STATES.REMAIN_SECONDS],
-            //   clear_heart: state[STATES.REMAIN_LIFES]
-            // },"*");
+          postClearGame(dataObj).then((response)=>{
+            console.log(response);
+            window.parent.postMessage({
+              functionName: "gameClear",
+              data: response
+            },"*");
+          });
+            
           AFRAME.scenes[0].emit('stopGame');
         }
       } else {

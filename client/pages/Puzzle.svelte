@@ -145,7 +145,6 @@ inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/afr
     light="type:  point;  intensity:0.5 castShadow: true;"
     position="50 0 12"
   />
-  <!-- <GameUi scoreText={"0/2"}/> -->
 
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
