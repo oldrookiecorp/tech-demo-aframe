@@ -4,8 +4,8 @@
   import * as Targets from "./targets.svelte";
   import * as Timers from "./timer.svelte";
   import * as TimerLib from "../../lib/UI/Timer";
-  import {getGamesEnv} from '../../api/game';
-  
+  import { getGamesEnv } from "../../api/game";
+
   export const ENUMS = {
     [Game.KEYS_OF_STATE.STATE_OF_GAME]: Game.STATES_OF_GAME,
   };
@@ -16,7 +16,7 @@
     ...Targets.KEYS_OF_HANDLER,
     ...Timers.KEYS_OF_HANDLER,
     SET_CURRENT_SCENE: "setCurrentScene",
-    INITIAL_WITH_API : 'initWithAPI',
+    INITIAL_WITH_API: "initWithAPI",
     // 실제 UI의 메인 실행 함수
     START_GAME: "startGame",
     // 실제 UI의 메인 종료 함수
@@ -33,9 +33,9 @@
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
-  
+
   if (typeof window !== "undefined") {
-    let dataTest='';
+    let dataTest = "";
     // getGamesEnv(1).then((response)=>{
     //   dataTest = response;
     // })
@@ -53,7 +53,7 @@
         // [Timers.KEYS_OF_STATE.SECONDS]:TimeProps ,
         // [Timers.KEYS_OF_STATE.REMAIN_SECONDS]: TimeProps,
         [STATES.CURRENT_SCENE]: null,
-        [STATES.UserName]: "ss"
+        [STATES.UserName]: "ss",
       },
       handlers: {
         ...Game.__HANDLERS,
@@ -89,13 +89,12 @@
             // const reponse1 = getGamesEnv(1);
             // console.log(`result: ${reponse1}`);
             // //life 초기화
-            // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});  
+            // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});
             console.log(`dd:${state[STATES.UserName]}`);
 
             // console.log(state[STATES.LIFES]);
             // console.log(state[STATES.REMAIN_LIFES]);
 
-            
             // 타이머 초기화
             const _startedAt = state[STATES.STARTED_AT];
             const _seconds = state[STATES.SECONDS];
@@ -111,12 +110,15 @@
                 // 시간이 모두 소진된 경우 게임 종료 처리
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
                 // 클라이언트로 데이터 전송
-                window.parent.postMessage({
-                  functionName: "gameOver",
-                  user_name: state[STATES.UserName],
-                  cur_time: state[STATES.REMAIN_SECONDS],
-                  cur_heart: state[STATES.REMAIN_LIFES]
-                },"*");
+                window.parent.postMessage(
+                  {
+                    functionName: "gameOver",
+                    user_name: params.user ? params.user : "hi!",
+                    cur_time: state[STATES.REMAIN_SECONDS],
+                    cur_heart: state[STATES.REMAIN_LIFES],
+                  },
+                  "*"
+                );
                 _currentScene.emit(HANDLERS.STOP_GAME);
               } else {
                 _currentScene.emit(HANDLERS.SET_REMAIN_SECONDS, {
@@ -153,7 +155,7 @@
             // 남은 타겟 수 초기화
             state[STATES.REMAIN_TARGETS] =
               Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
-             
+
             //VR모드 종료
             const _currentScene = state[STATES.CURRENT_SCENE];
             _currentScene.exitVR();
@@ -167,12 +169,12 @@
             throw _error;
           }
         },
-        [HANDLERS.INITIAL_WITH_API](state , action){
+        [HANDLERS.INITIAL_WITH_API](state, action) {
           state[STATES.LIFES] = action[STATES.LIFES];
           state[STATES.REMAIN_LIFES] = action[STATES.LIFES];
           state[STATES.SECONDS] = action[STATES.SECONDS];
           state[STATES.SECONDS] = action[STATES.SECONDS];
-        }
+        },
       },
     });
     console.log("state registered", HANDLERS, STATES);

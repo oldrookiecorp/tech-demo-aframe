@@ -9,3 +9,5 @@ export const getGamesEnv = async (id) => {
     return e;
   }
 };
+
+
