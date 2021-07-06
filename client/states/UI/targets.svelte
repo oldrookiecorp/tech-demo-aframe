@@ -31,7 +31,7 @@
         state[KEYS_OF_STATE.REMAIN_TARGETS]++;
         if(state[KEYS_OF_STATE.REMAIN_TARGETS] === state[KEYS_OF_STATE.NUMBER_OF_TARGETS]){
           const dataObj = {
-            "username" : "test",
+            "username" : state[STATES.UserName],
             "stage" : state[STATES.CURRENT_SCENE_ID],
             "clear_time" : state[STATES.REMAIN_SECONDS],
             "clear_heart" : state[STATES.REMAIN_LIFES]

@@ -11,7 +11,7 @@
           default: [STATES.STATE_OF_GAME],
         },
       },
-    init: function () {
+    update: function () {
       console.log(this.data[STATES.STATE_OF_GAME]);
       this.el.addEventListener("click", function (evt) {
       console.log(`ddd:${STATES.STATE_OF_GAME}`);
