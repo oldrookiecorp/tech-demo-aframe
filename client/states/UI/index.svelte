@@ -79,10 +79,15 @@
             // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
-            STATES.UserName = params.user ? params.user : "unnamed";
-            STATES.GameID = params.gameId;
 
-            console.log(`Username ; ${params.user}`);
+            console.log(`paramUsername : ${params.user}`);
+
+            state[STATES.UserName] = params.user ? params.user : "unnamed";
+            // params.user !== undefined ? params.user : "unnamed";
+            console.log(`state.username : ${state[STATES.UserName]}`);
+
+            state[STATES.GameID] = params.gameId;
+            // STATES.GameID = params.gameId;
 
             const _currentScene = state[STATES.CURRENT_SCENE];
 
@@ -90,7 +95,6 @@
             // console.log(`result: ${reponse1}`);
             // //life 초기화
             // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});
-            console.log(`state.username:${state[STATES.UserName]}`);
 
             // console.log(state[STATES.LIFES]);
             // console.log(state[STATES.REMAIN_LIFES]);
@@ -109,11 +113,19 @@
               if (__remainSeconds <= 0) {
                 // 시간이 모두 소진된 경우 게임 종료 처리
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
+                console.log(
+                  `[STATE:Global]:${state[STATES.UserName]} ${
+                    state[STATES.REMAIN_SECONDS]
+                  } ${state[STATES.REMAIN_LIFES]} ${
+                    state[STATES.REMAIN_TARGETS]
+                  }`
+                );
                 // 클라이언트로 데이터 전송
                 window.parent.postMessage(
                   {
                     functionName: "gameOver",
                     user_name: state[STATES.UserName],
+                    remain_obj: state[STATES.REMAIN_TARGETS],
                     cur_time: state[STATES.REMAIN_SECONDS],
                     cur_heart: state[STATES.REMAIN_LIFES],
                   },
