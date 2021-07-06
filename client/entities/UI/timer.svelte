@@ -8,20 +8,21 @@
         // 남은 초
         [STATES.REMAIN_SECONDS]: {
           type: "number",
-          default: -1,
+          default: [STATES.REMAIN_SECONDS],
         },
       },
       init() {
         const _el = this.el;
-        const _data = this.data;
-        console.log(`[TIMER COMPONENT] intialized. ${JSON.stringify(_data)}`);
+        const data = this.data;
+        console.log(`[TIMER COMPONENT] intialized. ${JSON.stringify(data)}`);
       },
       update() {
         const _el = this.el;
-        const _data = this.data;
+        const data = this.data;
+        console.log(`update data:${data[STATES.REMAIN_SECONDS]}`)
         const _oldData = _el.getAttribute("text");
         const _remainTimes = convertSecondsToMinutes(
-          _data[STATES.REMAIN_SECONDS]
+          data[STATES.REMAIN_SECONDS]
         );
         _el.setAttribute("text", {
           ..._oldData,
