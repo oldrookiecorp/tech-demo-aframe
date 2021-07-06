@@ -79,7 +79,7 @@
             // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
-            STATES.UserName = params.user;
+            STATES.UserName = params.user ? params.user : "unnamed";
             STATES.GameID = params.gameId;
 
             console.log(`Username ; ${params.user}`);
@@ -90,7 +90,7 @@
             // console.log(`result: ${reponse1}`);
             // //life 초기화
             // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});
-            console.log(`dd:${state[STATES.UserName]}`);
+            console.log(`state.username:${state[STATES.UserName]}`);
 
             // console.log(state[STATES.LIFES]);
             // console.log(state[STATES.REMAIN_LIFES]);
@@ -113,7 +113,7 @@
                 window.parent.postMessage(
                   {
                     functionName: "gameOver",
-                    user_name: params.user ? params.user : "hi!",
+                    user_name: state[STATES.UserName],
                     cur_time: state[STATES.REMAIN_SECONDS],
                     cur_heart: state[STATES.REMAIN_LIFES],
                   },

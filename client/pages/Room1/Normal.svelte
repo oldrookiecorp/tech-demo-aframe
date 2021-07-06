@@ -1,7 +1,7 @@
 <script context="module">
   import GameObject from "../entities/GameObject.svelte";
   import RoomTest from "../entities/RoomTest.svelte";
-  import CheckAnswer from "../components/CheckAnswer.svelte"
+  import CheckAnswer from "../components/CheckAnswer.svelte";
   import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
   import UIStates from "../states/UI/index.svelte";
   import UIGlobalComponent from "../components/UI/ui.svelte";
@@ -9,10 +9,8 @@
   export const fileName = "Normal";
 </script>
 
-
 <svelte:head>
   <script>
-
     // 상태변수
     let score = 0;
     AFRAME.registerComponent("cursor-listener", {
@@ -27,7 +25,6 @@
           "0.4 -4.502 9.69",
           // 빈백
           "7.642 -4.856 15.446",
-          
         ];
         for (let j = 0; j < 4; j++) {
           const copyElement = copyArr[j].cloneNode();
@@ -38,40 +35,36 @@
         }
 
         this.el.addEventListener("click", function (evt) {
-            console.log("start!");
-            const answerArr = document.getElementsByClassName("answer");
-            const srcArr = [
-              "assets/Puzzle/gltf/빈백_쿠션_코랄색/빈백_쿠션_코랄색.gltf",
-            ];
-            for (let i = 0; i < 2; i++) {
-              answerArr[i].setAttribute("src", srcArr[i]);
-            }
-            AFRAME.scenes[0].emit('startGame');
-          });
+          console.log("start!");
+          const answerArr = document.getElementsByClassName("answer");
+          const srcArr = [
+            "assets/Puzzle/gltf/빈백_쿠션_코랄색/빈백_쿠션_코랄색.gltf",
+          ];
+          for (let i = 0; i < 2; i++) {
+            answerArr[i].setAttribute("src", srcArr[i]);
+          }
+          AFRAME.scenes[0].emit("startGame");
+        });
       },
     });
   </script>
-  
 </svelte:head>
 <!-- UI 관련 스테이트 -->
 <UIStates />
 <!-- UI의 글로벌 컴포넌트 -->
 <UIGlobalComponent />
 <!-- 정답체크 컴포넌트 -->
-<CheckAnswer/>
+<CheckAnswer />
 <a-scene
   id="scene-stage-2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               "
-  ui                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+  ui
   vr-mode-ui
   inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
 >
-<UIAssets />
+  <UIAssets />
 
-  <a-entity
-    light="type: ambient;  intensity: 0.5;"
-    position="20 0 12"
-  />
- 
+  <a-entity light="type: ambient;  intensity: 0.5;" position="20 0 12" />
+
   <a-entity
     light="type: point; castShadow: true; intensity: 0.2;"
     position="20 -2 8"
@@ -86,7 +79,12 @@
   />
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
-  <a-entity camera look-controls wasd-controls position="20 1.5 15">
+  <a-entity
+    camera
+    look-controls="pointerLockEnabled: true;"
+    wasd-controls
+    position="20 1.5 15"
+  >
     <a-entity
       cursor="fuse: true; fuseTimeout: 500"
       position="0 0 -1"
