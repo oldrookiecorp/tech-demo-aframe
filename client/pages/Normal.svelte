@@ -8,8 +8,6 @@
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
 
-  import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
-  import * as StateLib from "../lib/state/bind";
 
   
 </script>
@@ -21,6 +19,9 @@
       init: function () {
         // 환경배치
         const scene = document.querySelector("a-scene");
+
+        scene.enterVR();
+        AFRAME.scenes[0].emit('initLifes');
         const copyArr = document.getElementsByClassName("env");
         const position = [
           "-3.776 -4.5 0.971",

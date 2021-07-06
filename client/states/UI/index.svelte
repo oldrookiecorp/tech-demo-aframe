@@ -45,15 +45,11 @@
     AFRAME.registerState({
       initialState: {
         ...Game.__INITIAL_STATES,
-        // [STATES.LIFES]: dataTest.heartCnt,
-        // [STATES.REMAIN_LIFES]: dataTest.heartCnt,
-        ...Lifes.__INITIAL_STATES,
         ...Targets.__INITIAL_STATES,
         ...Timers.__INITIAL_STATES,
-        // [Timers.KEYS_OF_STATE.SECONDS]:TimeProps ,
-        // [Timers.KEYS_OF_STATE.REMAIN_SECONDS]: TimeProps,
+
         [STATES.CURRENT_SCENE]: null,
-        [STATES.UserName]: "ss"
+        [STATES.UserName]: "userName"
       },
       handlers: {
         ...Game.__HANDLERS,
@@ -85,15 +81,9 @@
             console.log(`Username ; ${params.user}`);
 
             const _currentScene = state[STATES.CURRENT_SCENE];
+            //life 초기화
+            _currentScene.emit("initLifes");
 
-            // const reponse1 = getGamesEnv(1);
-            // console.log(`result: ${reponse1}`);
-            // //life 초기화
-            // AFRAME.scenes[0].emit(HANDLERS.INIT_LIFES,{[STATES.LIFES]:3});  
-            console.log(`dd:${state[STATES.UserName]}`);
-
-            // console.log(state[STATES.LIFES]);
-            // console.log(state[STATES.REMAIN_LIFES]);
 
             
             // 타이머 초기화
