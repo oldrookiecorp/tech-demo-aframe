@@ -16,8 +16,6 @@
         // 환경배치
         const scene = document.querySelector("a-scene");
 
-        scene.enterVR();
-
         const copyArr = document.getElementsByClassName("env");
         const position = [
           "-3.776 -4.5 0.971",
@@ -91,12 +89,12 @@
     wasd-controls
     position="20 1.5 15"
   >
-    <a-entity
-      cursor="fuse: true; fuseTimeout: 500"
-      position="0 0 -1"
-      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-      material="color: #fff; shader: flat; opacity: .8"
-    />
+  <a-entity
+    cursor="fuse: true; fuseTimeout: 500"
+    position="0 0 -1"
+    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+    material="color: #fff; shader: flat; opacity: .8"
+  />
     <UIComponent />
   </a-entity>
   <GameObject Normal={true} />
