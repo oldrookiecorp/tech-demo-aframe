@@ -79,6 +79,8 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
+  <a-entity oculus-go-controls></a-entity>
+
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
   <a-entity
