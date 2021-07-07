@@ -12,7 +12,6 @@
 <svelte:head>
   <script>
     // 상태변수
-    let score = 0;
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Orange Arrow
+* source:	https://sketchfab.com/3d-models/orange-arrow-4a0d45186e1d4ba99bd3eacbd3b7c30d
+* author:	ccy131006 (https://sketchfab.com/ccy131006)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Orange Arrow" (https://sketchfab.com/3d-models/orange-arrow-4a0d45186e1d4ba99bd3eacbd3b7c30d) by ccy131006 (https://sketchfab.com/ccy131006) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

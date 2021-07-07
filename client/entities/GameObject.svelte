@@ -8,7 +8,17 @@
 </script>
 
 <ObjAsset />
-
+<a-text 
+  value="<게임방법>
+  1. 여울이를 클릭하면 게임이 시작됩니다.
+  2. 화살표로 표시된 방에서 반대편 방과 다른 사물을 찾아 주세요.
+  3. 시간 내에 모든 사물을 찾으면 GAMECLEAR!
+  4. 시간이 초과되거나 목숨이 모두 소진되면 GAMEOVER!" 
+  position="20 5 5"
+  scale="2 2 2"
+  background="red"
+  
+  color="black"></a-text>
 <a-gltf-model
   shadow="cast: true; "
   src={ObjAssets.npc}
@@ -21,6 +31,15 @@
   dir: alternate; 
   dur: 1000; 
   loop: true"
+/>
+
+<a-gltf-model
+id="arrow"
+  shadow="cast: true; "
+  src={ObjAssets.arrow}
+  position="9.468 3.402 6.978"
+  rotation="0 180 0"
+  scale="3 3 3"
 />
 <a-gltf-model
   shadow="cast: true; receive: true"
@@ -78,14 +97,14 @@
 
 
 {#if Hard}
-<a-gltf-model
-shadow="cast: true; receive: true"
-class="env answer"
-src={ObjAssets.diningTable}
-scale="3 3 3"
-position="42.714 -4.524 7.2"
-id="diningTable"
-/>
+  <a-gltf-model
+  shadow="cast: true; receive: true"
+  class="env answer"
+  src={ObjAssets.diningTable}
+  scale="3 3 3"
+  position="42.714 -4.524 7.2"
+  id="diningTable"
+  />
   <a-gltf-model
     shadow="cast: true; receive: true"
     check-answer

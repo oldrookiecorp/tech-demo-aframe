@@ -19,7 +19,6 @@
       update() {
         const _el = this.el;
         const data = this.data;
-        console.log(`update data:${data[STATES.REMAIN_SECONDS]}`)
         const _oldData = _el.getAttribute("text");
         const _remainTimes = convertSecondsToMinutes(
           data[STATES.REMAIN_SECONDS]

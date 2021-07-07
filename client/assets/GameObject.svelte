@@ -10,8 +10,8 @@
       adidas: "#adidas",
       bigDiningTable: "#bigDiningTable",
       diningTable: "#diningTable",
-      bluevase: "#bluevase"
-
+      bluevase: "#bluevase",
+      arrow: "#arrow"
     };
   </script>
   
@@ -20,6 +20,7 @@
     <a-asset-item id="desk"src="assets/Puzzle/gltf/stylized_desk/scene.gltf"/>
     <a-asset-item id="shelf"src="assets/Puzzle/gltf/shelf/scene.gltf"/>
     <a-asset-item id="npc"src="assets/Puzzle/gltf/isabelle_animal_crossing/scene.gltf"/>
+    <a-asset-item id="arrow"src="assets/Puzzle/gltf/orange_arrow/scene.gltf"/>
     
    
     <a-asset-item id="modern__sofa"src="assets/Puzzle/gltf/modern__sofa/scene.gltf"/>
