@@ -8,7 +8,7 @@
         // 남은 초
         [STATES.REMAIN_SECONDS]: {
           type: "number",
-          default: [STATES.REMAIN_SECONDS],
+          default: 0,
         },
       },
       init() {

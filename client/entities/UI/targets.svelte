@@ -7,12 +7,12 @@
         // 최대 타겟 수
         [STATES.NUMBER_OF_TARGETS]: {
           type: "number",
-          default: [STATES.NUMBER_OF_TARGETS],
+          default: 0,
         },
         // 남은 타겟 수
         [STATES.REMAIN_TARGETS]: {
           type: "number",
-          default: [STATES.REMAIN_TARGETS],
+          default: 0,
         },
       },
       update: function () {
