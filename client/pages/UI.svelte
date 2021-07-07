@@ -22,7 +22,7 @@
 
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
-  <a-entity camera look-controls wasd-controls>
+  <a-entity camera look-controls="pointerLockEnabled: true;" wasd-controls>
     <a-entity
       cursor="fuse: true; fuseTimeout: 500"
       position="0 0 -1"

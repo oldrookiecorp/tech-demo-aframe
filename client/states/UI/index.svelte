@@ -4,8 +4,8 @@
   import * as Targets from "./targets.svelte";
   import * as Timers from "./timer.svelte";
   import * as TimerLib from "../../lib/UI/Timer";
-  import {getGamesEnv} from '../../api/game';
-  
+  import { getGamesEnv } from "../../api/game";
+
   export const ENUMS = {
     [Game.KEYS_OF_STATE.STATE_OF_GAME]: Game.STATES_OF_GAME,
   };
@@ -16,7 +16,7 @@
     ...Targets.KEYS_OF_HANDLER,
     ...Timers.KEYS_OF_HANDLER,
     SET_CURRENT_SCENE: "setCurrentScene",
-    INITIAL_WITH_API : 'initWithAPI',
+    INITIAL_WITH_API: "initWithAPI",
     // 실제 UI의 메인 실행 함수
     START_GAME: "startGame",
     // 실제 UI의 메인 종료 함수
@@ -33,7 +33,7 @@
     CURRENT_SCENE: "CURRENT_SCENE",
     CURRENT_SCENE_ID: "CURRENT_SCENE_ID",
   };
-  
+
   if (typeof window !== "undefined") {
     AFRAME.registerState({
       initialState: {
@@ -41,7 +41,7 @@
         [STATES.INTERVAL]: null,
         [STATES.STARTED_AT]: null,
         [STATES.CURRENT_SCENE]: null,
-        [STATES.UserName]: "userName"
+        [STATES.UserName]: "userName",
       },
       handlers: {
         ...Game.__HANDLERS,
@@ -67,8 +67,15 @@
             // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
-            STATES.UserName = params.user;
-            STATES.GameID = params.gameId;
+
+            console.log(`paramUsername : ${params.user}`);
+
+            state[STATES.UserName] = params.user ? params.user : "unnamed";
+            // params.user !== undefined ? params.user : "unnamed";
+            console.log(`state.username : ${state[STATES.UserName]}`);
+
+            state[STATES.GameID] = params.gameId;
+            // STATES.GameID = params.gameId;
 
             const _currentScene = state[STATES.CURRENT_SCENE];
             //life 초기화
@@ -76,7 +83,7 @@
 
             //target obj 초기화
             _currentScene.emit("initTargets");
-          
+
             // 타이머 초기화
             const _startedAt = state[STATES.STARTED_AT];
             const _seconds = state[STATES.SECONDS];
@@ -93,16 +100,19 @@
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
 
                 // 클라이언트로 데이터 전송
-                window.parent.postMessage({
-                  functionName: "gameOver",
-                  user_name: state[STATES.UserName],
-                  cur_obj: state[STATES.REMAIN_TARGETS],
-                  cur_time: state[STATES.REMAIN_SECONDS],
-                  cur_heart: state[STATES.REMAIN_LIFES],
-                  total_time: state[STATES.SECONDS],
-                  total_heart: state[STATES.LIFES],
-                  total_obj: state[STATES.NUMBER_OF_TARGETS]
-                },"*");
+                window.parent.postMessage(
+                  {
+                    functionName: "gameOver",
+                    user_name: state[STATES.UserName],
+                    cur_obj: state[STATES.REMAIN_TARGETS],
+                    cur_time: state[STATES.REMAIN_SECONDS],
+                    cur_heart: state[STATES.REMAIN_LIFES],
+                    total_time: state[STATES.SECONDS],
+                    total_heart: state[STATES.LIFES],
+                    total_obj: state[STATES.NUMBER_OF_TARGETS],
+                  },
+                  "*"
+                );
                 _currentScene.emit(HANDLERS.STOP_GAME);
               } else {
                 _currentScene.emit(HANDLERS.SET_REMAIN_SECONDS, {
@@ -140,7 +150,7 @@
             // 남은 타겟 수 멈춤
             // state[STATES.REMAIN_TARGETS] =
             //   Targets.__INITIAL_STATES[STATES.REMAIN_TARGETS];
-             
+
             //VR모드 종료
             _currentScene.exitVR();
 
@@ -153,12 +163,12 @@
             throw _error;
           }
         },
-        [HANDLERS.INITIAL_WITH_API](state , action){
+        [HANDLERS.INITIAL_WITH_API](state, action) {
           state[STATES.LIFES] = action[STATES.LIFES];
           state[STATES.REMAIN_LIFES] = action[STATES.LIFES];
           state[STATES.SECONDS] = action[STATES.SECONDS];
           state[STATES.SECONDS] = action[STATES.SECONDS];
-        }
+        },
       },
     });
     console.log("state registered", HANDLERS, STATES);
