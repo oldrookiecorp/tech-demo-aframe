@@ -30,7 +30,6 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
-          // copyElement.setAttribute("bind__check-answer", `${StateLib.bind([STATES.STATE_OF_GAME])}`);
 
           scene.appendChild(copyElement);
         }

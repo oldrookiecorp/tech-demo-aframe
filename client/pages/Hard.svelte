@@ -1,18 +1,22 @@
 <script context="module">
-  import GameObject from "../entities/GameObject.svelte";
-  import RoomTest from "../entities/RoomTest.svelte";
-  import CheckAnswer from "../components/CheckAnswer.svelte";
-  import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
+    import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
   import UIStates from "../states/UI/index.svelte";
   import UIGlobalComponent from "../components/UI/ui.svelte";
+  import GameObject from "../entities/GameObject.svelte";
+  import RoomTest from "../entities/RoomTest.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
+  import CheckAnswer from "../components/CheckAnswer.svelte";
+  import * as StateLib from "../lib/state/bind";
+  import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
+
   export const fileName = "Normal";
+
+
 </script>
 
 <svelte:head>
   <script>
     // 상태변수
-    let score = 0;
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -35,6 +39,7 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
+          // copyElement.setAttribute("bind__check-answer", StateLib.bind([STATES.LIFES, STATES.REMAIN_LIFES]));
 
           scene.appendChild(copyElement);
         }
@@ -61,7 +66,7 @@
 <!-- UI의 글로벌 컴포넌트 -->
 <UIGlobalComponent />
 <!-- 정답체크 컴포넌트 -->
-<CheckAnswer />
+<CheckAnswer/>
 <a-scene
   id="3"
   ui

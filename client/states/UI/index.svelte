@@ -64,15 +64,17 @@
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();
 
+            //문개방
+            const door = document.querySelectorAll(".door");
+            for(let i=0; i<door.length; i++){
+              door[i].remove();
+            }
             // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
 
-            console.log(`paramUsername : ${params.user}`);
-
             state[STATES.UserName] = params.user ? params.user : "unnamed";
             // params.user !== undefined ? params.user : "unnamed";
-            console.log(`state.username : ${state[STATES.UserName]}`);
 
             state[STATES.GameID] = params.gameId;
             // STATES.GameID = params.gameId;
@@ -162,12 +164,6 @@
             console.log(_error);
             throw _error;
           }
-        },
-        [HANDLERS.INITIAL_WITH_API](state, action) {
-          state[STATES.LIFES] = action[STATES.LIFES];
-          state[STATES.REMAIN_LIFES] = action[STATES.LIFES];
-          state[STATES.SECONDS] = action[STATES.SECONDS];
-          state[STATES.SECONDS] = action[STATES.SECONDS];
         },
       },
     });
