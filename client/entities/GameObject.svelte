@@ -14,19 +14,17 @@
   2. 화살표로 표시된 방에서 반대편 방과 다른 사물을 찾아 주세요.
   3. 시간 내에 모든 사물을 찾으면 GAMECLEAR!
   4. 시간이 초과되거나 목숨이 모두 소진되면 GAMEOVER!"  -->
-<a-text 
-id="how"
-  value={`<Game Method>
-    1. Click Yeoul to start the game.
-    2. In the room marked with arrows, please find something different from the other room.
-    3. If you find everything in time, it's GAMECLEAR!
-    4. GAMEOVER if time runs out or your life runs out!`}
-    lineHeight=15
-  position="14.676 3.091 5"
-  scale="2 2 2"
-  background="red"
-  color="white"
-  shader="black"/>
+  <a-text 
+    id="how"
+    value={`
+      1. Click Yeoul to start the game.
+      2. In the room marked with arrows, please find something different from the other room.
+      3. If you find everything in time, it's GAMECLEAR!
+      4. GAMEOVER if time runs out or your life runs out!`}
+    ineHeight=15
+    position="14.676 3.091 5"
+    scale="2 2 2"
+    color="black"/>
 
   <a-gltf-model
   shadow="cast: true; "

@@ -72,9 +72,8 @@
   >
     <Targets />
   </a-plane>
-  <a-text id="fail"  value="Fail" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
-  <a-text id="correct" value="Correct" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
-
+  <a-text id="textUI"  value=" " scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
+  <a-text id = "countdown" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center"></a-text>
   <a-plane
     class="ui-container-bottom"
     position="0 -.7 0"

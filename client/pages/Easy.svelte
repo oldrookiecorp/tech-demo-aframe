@@ -45,7 +45,26 @@
           for (let i = 0; i < srcArr.length; i++) {
             answerArr[i].setAttribute("src", srcArr[i]);
           }
-          AFRAME.scenes[0].emit("startGame");
+          //문개방
+          const door = document.querySelectorAll(".door");
+            const countdown = document.querySelector("#countdown");
+
+            let count=10;
+            const countInterval = setInterval(function(){
+              if(count === 0){
+                clearInterval(countInterval);
+                countdown.remove();
+              }
+              countdown.setAttribute("value",count);
+              count--;
+            }, 1000);
+
+            setTimeout(function(){
+              for(let i=0; i<door.length; i++){
+                door[i].remove();
+                AFRAME.scenes[0].emit("startGame");
+              }
+            },11000);
         });
       },
     });

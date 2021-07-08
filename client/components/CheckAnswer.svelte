@@ -14,8 +14,7 @@
     update: function () {
       let states =this.data[STATES.STATE_OF_GAME];
         this.el.addEventListener("click", function (evt) {
-            const failTextUI = document.querySelector("#fail");
-            const correctTextUI = document.querySelector("#correct");
+            const textUI = document.querySelector("#textUI");
           //   console.log(`states: ${states}`);
           //   console.log(`className: ${this.className}`)
           // if(states === "STARTED"){
@@ -23,10 +22,12 @@
           //   console.log(`states in Start: ${states}`)
 
             if (this.className === "env answer") {
-              correctTextUI.setAttribute("visible",true);
+              textUI.setAttribute("value","Correct");
+
+              textUI.setAttribute("visible",true);
 
               setTimeout(function(){
-              correctTextUI.setAttribute("visible",false);
+                textUI.setAttribute("visible",false);
               },2000);
 
               this.setAttribute("class", "env find");
@@ -37,10 +38,11 @@
               } else if (this.className === "env find") {
                 //이미 찾은 정답일때 어떻게 할것인지 고민중
               } else {
-                failTextUI.setAttribute("visible",true);
+                textUI.setAttribute("value","Fail");
+                textUI.setAttribute("visible",true);
 
                 setTimeout(function(){
-                  failTextUI.setAttribute("visible",false);
+                  textUI.setAttribute("visible",false);
                 },2000)
 
                 AFRAME.scenes[0].emit('decreaseRemainLifes');    

@@ -6,8 +6,9 @@
   import RoomTest from "../entities/RoomTest.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
   import CheckAnswer from "../components/CheckAnswer.svelte";
-  import * as StateLib from "../lib/state/bind";
   import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
+
+  import * as StateLib from "../lib/state/bind";
 
   export const fileName = "Normal";
 
@@ -16,6 +17,7 @@
 
 <svelte:head>
   <script>
+
     // 상태변수
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
@@ -39,12 +41,12 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
-          // copyElement.setAttribute("bind__check-answer", StateLib.bind([STATES.LIFES, STATES.REMAIN_LIFES]));
 
           scene.appendChild(copyElement);
         }
 
         this.el.addEventListener("click", function (evt) {
+
           console.log("start!");
           const answerArr = document.getElementsByClassName("answer");
           const srcArr = [
@@ -55,7 +57,27 @@
           for (let i = 0; i < srcArr.length; i++) {
             answerArr[i].setAttribute("src", srcArr[i]);
           }
-          AFRAME.scenes[0].emit("startGame");
+          //문개방
+          const door = document.querySelectorAll(".door");
+            const countdown = document.querySelector("#countdown");
+
+            let count=10;
+            const countInterval = setInterval(function(){
+              if(count === 0){
+                clearInterval(countInterval);
+                countdown.remove();
+              }
+              countdown.setAttribute("value",count);
+              count--;
+            }, 1000);
+
+            setTimeout(function(){
+              for(let i=0; i<door.length; i++){
+                door[i].remove();
+                AFRAME.scenes[0].emit("startGame");
+              }
+            },11000);
+
         });
       },
     });
