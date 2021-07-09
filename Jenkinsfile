@@ -49,12 +49,20 @@ pipeline {
           mail  to: 'dev.gihong2012@gmail.com',
                 subject: "Build # ${BUILD_TAG} Successed!",
                 body: "Build # ${BUILD_TAG}: Check console output at ${BUILD_URL} to view the results."
+
+          mail  to: 'hw.kim@oldrookiecorp.com',
+                subject: "Build # ${BUILD_TAG} Successed!",
+                body: "Build # ${BUILD_TAG}: Check console output at ${BUILD_URL} to view the results."
         }
 
         failure {
           echo "Deploy Failed"
 
           mail  to: 'dev.gihong2012@gmail.com',
+                subject: "Build # ${BUILD_TAG} Failed!",
+                body: "Build # ${BUILD_TAG}: Check console output at ${BUILD_URL} to view the results."
+
+          mail  to: 'hw.kim@oldrookiecorp.com',
                 subject: "Build # ${BUILD_TAG} Failed!",
                 body: "Build # ${BUILD_TAG}: Check console output at ${BUILD_URL} to view the results."
         }
