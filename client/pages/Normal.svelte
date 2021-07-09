@@ -11,6 +11,18 @@
 
 <svelte:head>
   <script>
+    AFRAME.registerComponent('thumbstick-logging',{
+  init: function () {
+    this.el.addEventListener('thumbstickmoved', this.logThumbstick);
+  },
+  logThumbstick: function (evt) {
+    if (evt.detail.y > 0.95) { console.log("DOWN"); }
+    if (evt.detail.y < -0.95) { console.log("UP"); }
+    if (evt.detail.x < -0.95) { console.log("LEFT"); }
+    if (evt.detail.x > 0.95) { console.log("RIGHT"); }
+  }
+});
+
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -99,10 +111,9 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls></a-entity>
-
-  <a-entity laser-controls="hand: left" />
-  <a-entity laser-controls="hand: right" />
+  <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
+  <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
+  
   <a-entity
     camera
     look-controls="pointerLockEnabled: true;"
