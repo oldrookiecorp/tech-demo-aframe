@@ -61,22 +61,29 @@
   ui-container
   bind__ui-container={StateLib.bind([STATES.ENABLE_XR_MODE])}
 >
-  <a-entity
+  <a-plane
     class="ui-container-top"
     position="0 .7  0"
     data-ui-container-position="top"
+    color="rgb(0,0,0)"
+    opacity="0.4"
+    width=".4"
+    height=".1"
   >
     <Targets />
-  </a-entity>
-  <a-text id="fail"  value="Fail" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
-  <a-text id="correct" value="Correct" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
-
-  <a-entity
+  </a-plane>
+  <a-text id="textUI"  value=" " scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center" visible = {false}/>
+  <a-text id = "countdown" scale =".5 .5 .5" position = "-.1 -.2 0" data-ui-container-position="center"></a-text>
+  <a-plane
     class="ui-container-bottom"
     position="0 -.7 0"
     data-ui-container-position="bottom"
+    color="rgb(0,0,0)"
+    opacity="0.4"
+    width=".4"
+    height=".2"
   >
     <Timer />
     <Lifes />
-  </a-entity>
+  </a-plane>
 </a-entity>

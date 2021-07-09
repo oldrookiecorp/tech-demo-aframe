@@ -64,15 +64,14 @@
             // 시작 시간을 현재로 변경
             state[STATES.STARTED_AT] = new moment();
 
+            
+            
             // 유저 닉네임 및 게임 id 확인
             const urlSearchParams = new URLSearchParams(window.location.search);
             const params = Object.fromEntries(urlSearchParams.entries());
 
-            console.log(`paramUsername : ${params.user}`);
-
             state[STATES.UserName] = params.user ? params.user : "unnamed";
             // params.user !== undefined ? params.user : "unnamed";
-            console.log(`state.username : ${state[STATES.UserName]}`);
 
             state[STATES.GameID] = params.gameId;
             // STATES.GameID = params.gameId;
@@ -98,7 +97,9 @@
               if (__remainSeconds <= 0) {
                 // 시간이 모두 소진된 경우 게임 종료 처리
                 console.log("[STATE:Global] 시간이 모두 소진되었습니다");
-
+                _currentScene.emit(HANDLERS.SET_REMAIN_SECONDS, {
+                  [STATES.REMAIN_SECONDS]: __remainSeconds,
+                });
                 // 클라이언트로 데이터 전송
                 window.parent.postMessage(
                   {
@@ -162,12 +163,6 @@
             console.log(_error);
             throw _error;
           }
-        },
-        [HANDLERS.INITIAL_WITH_API](state, action) {
-          state[STATES.LIFES] = action[STATES.LIFES];
-          state[STATES.REMAIN_LIFES] = action[STATES.LIFES];
-          state[STATES.SECONDS] = action[STATES.SECONDS];
-          state[STATES.SECONDS] = action[STATES.SECONDS];
         },
       },
     });

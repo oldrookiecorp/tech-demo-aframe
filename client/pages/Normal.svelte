@@ -8,7 +8,7 @@
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
 </script>
-
+<script src="https://unpkg.com/aframe-thumb-controls-component@1.1.0/dist/aframe-thumb-controls-component.min.js"></script>
 <svelte:head>
   <script>
     AFRAME.registerComponent("cursor-listener", {
@@ -30,7 +30,6 @@
           const copyElement = copyArr[j].cloneNode();
           copyElement.setAttribute("position", position[j]);
           copyElement.setAttribute("check-answer", "");
-          // copyElement.setAttribute("bind__check-answer", `${StateLib.bind([STATES.STATE_OF_GAME])}`);
 
           scene.appendChild(copyElement);
         }
@@ -45,7 +44,26 @@
           for (let i = 0; i < srcArr.length; i++) {
             answerArr[i].setAttribute("src", srcArr[i]);
           }
-          AFRAME.scenes[0].emit("startGame");
+          //문개방
+          const door = document.querySelectorAll(".door");
+            const countdown = document.querySelector("#countdown");
+
+            let count=10;
+            const countInterval = setInterval(function(){
+              if(count === 0){
+                clearInterval(countInterval);
+                countdown.remove();
+              }
+              countdown.setAttribute("value",count);
+              count--;
+            }, 1000);
+
+            setTimeout(function(){
+              for(let i=0; i<door.length; i++){
+                door[i].remove();
+                AFRAME.scenes[0].emit("startGame");
+              }
+            },11000);
         });
       },
     });
@@ -81,10 +99,8 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls></a-entity>
-
-  <a-entity laser-controls="hand: left" />
-  <a-entity laser-controls="hand: right" />
+  <a-entity oculus-touch-controls="hand: left" vive-controls="hand: left" thumb-controls="hand: left"></a-entity>
+  <a-entity oculus-touch-controls="hand: right" vive-controls="hand: right" thumb-controls="hand: right"></a-entity>
   <a-entity
     camera
     look-controls="pointerLockEnabled: true;"

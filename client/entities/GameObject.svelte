@@ -8,18 +8,28 @@
 </script>
 
 <ObjAsset />
-<a-text 
-  value="<게임방법>
+
+<!-- "<게임방법>
   1. 여울이를 클릭하면 게임이 시작됩니다.
   2. 화살표로 표시된 방에서 반대편 방과 다른 사물을 찾아 주세요.
   3. 시간 내에 모든 사물을 찾으면 GAMECLEAR!
-  4. 시간이 초과되거나 목숨이 모두 소진되면 GAMEOVER!" 
-  position="20 5 5"
-  scale="2 2 2"
-  background="red"
-  
-  color="black"></a-text>
-<a-gltf-model
+  4. 시간이 초과되거나 목숨이 모두 소진되면 GAMEOVER!"  -->
+  <a-text 
+    id="how"
+    value={`
+      1. Click Yeoul to start the game.
+
+      2. In the room marked with arrows, please find something different from the other room.
+
+      3. If you find everything in time, it's GAMECLEAR!
+      
+      4. GAMEOVER if time runs out or your life runs out!`}
+    ineHeight=15
+    position="14.676 3.091 5"
+    scale="2 2 2"
+    color="black"/>
+
+  <a-gltf-model
   shadow="cast: true; "
   src={ObjAssets.npc}
   cursor-listener
@@ -37,7 +47,7 @@
 id="arrow"
   shadow="cast: true; "
   src={ObjAssets.arrow}
-  position="9.468 3.402 6.978"
+  position="11.107 3.402 6.978"
   rotation="0 180 0"
   scale="3 3 3"
 />

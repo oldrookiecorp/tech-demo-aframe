@@ -1,18 +1,24 @@
 <script context="module">
-  import GameObject from "../entities/GameObject.svelte";
-  import RoomTest from "../entities/RoomTest.svelte";
-  import CheckAnswer from "../components/CheckAnswer.svelte";
-  import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
+    import { default as UIAssets, Assets } from "../assets/UI/index.svelte";
   import UIStates from "../states/UI/index.svelte";
   import UIGlobalComponent from "../components/UI/ui.svelte";
+  import GameObject from "../entities/GameObject.svelte";
+  import RoomTest from "../entities/RoomTest.svelte";
   import { default as UIComponent } from "../entities/UI/index.svelte";
+  import CheckAnswer from "../components/CheckAnswer.svelte";
+  import { STATES, ENUMS, HANDLERS } from "../states/UI/index.svelte";
+
+  import * as StateLib from "../lib/state/bind";
+
   export const fileName = "Normal";
+
+
 </script>
 
 <svelte:head>
   <script>
+
     // 상태변수
-    let score = 0;
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -40,6 +46,7 @@
         }
 
         this.el.addEventListener("click", function (evt) {
+
           console.log("start!");
           const answerArr = document.getElementsByClassName("answer");
           const srcArr = [
@@ -50,7 +57,27 @@
           for (let i = 0; i < srcArr.length; i++) {
             answerArr[i].setAttribute("src", srcArr[i]);
           }
-          AFRAME.scenes[0].emit("startGame");
+          //문개방
+          const door = document.querySelectorAll(".door");
+          const countdown = document.querySelector("#countdown");
+
+          let count=10;
+          const countInterval = setInterval(function(){
+            if(count === 0){
+              clearInterval(countInterval);
+              countdown.remove();
+            }
+            countdown.setAttribute("value",count);
+            count--;
+          }, 1000);
+
+          setTimeout(function(){
+            for(let i=0; i<door.length; i++){
+              door[i].remove();
+              AFRAME.scenes[0].emit("startGame");
+            }
+          },11000);
+
         });
       },
     });
@@ -61,7 +88,7 @@
 <!-- UI의 글로벌 컴포넌트 -->
 <UIGlobalComponent />
 <!-- 정답체크 컴포넌트 -->
-<CheckAnswer />
+<CheckAnswer/>
 <a-scene
   id="3"
   ui
@@ -84,10 +111,11 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls></a-entity>
+  <!-- <a-entity oculus-go-controls></a-entity> -->
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
   <a-entity
+  oculus-go-controls
     camera
     look-controls="pointerLockEnabled: true;"
     wasd-controls

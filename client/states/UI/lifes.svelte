@@ -16,8 +16,6 @@
     [KEYS_OF_STATE.LIFES]: 5,
     [KEYS_OF_STATE.REMAIN_LIFES]: 5,
   };
-  
-
 
   export const __HANDLERS = {
     [KEYS_OF_HANDLER.INIT_LIFES]: function (state) {
