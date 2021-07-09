@@ -8,7 +8,7 @@
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
 </script>
-
+<script src="https://unpkg.com/aframe-extras@6.0.1/dist/aframe-extras.min.js"></script>
 <svelte:head>
   <script>
     AFRAME.registerComponent("cursor-listener", {
@@ -99,11 +99,23 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls></a-entity>
+  <a-entity id="rig" movement-controls>
+    <a-entity camera position="0 1.6 0" look-controls>
+      <a-entity
+      cursor="fuse: true; fuseTimeout: 500"
+      position="0 0 -1"
+      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+      material="color: #fff; shader: flat; opacity: .8"
+    />
+      <UIComponent />
+    </a-entity>
+    
+    <a-entity hand-controls="left"></a-entity>
+    <a-entity hand-controls="right"></a-entity>
+  </a-entity>
 
-  <a-entity laser-controls="hand: left" />
-  <a-entity laser-controls="hand: right" />
-  <a-entity
+
+  <!-- <a-entity
     camera
     look-controls="pointerLockEnabled: true;"
     wasd-controls
@@ -116,7 +128,7 @@
     material="color: #fff; shader: flat; opacity: .8"
   />
     <UIComponent />
-  </a-entity>
+  </a-entity> -->
   <GameObject Normal={true} />
   <RoomTest />
 </a-scene>
