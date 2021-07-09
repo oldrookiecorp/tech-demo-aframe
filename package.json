@@ -24,6 +24,7 @@
   "dependencies": {
     "aframe": "^1.2.0",
     "aframe-state-component": "^7.1.0",
+    "aframe-thumb-controls-component": "^2.0.2",
     "axios": "^0.21.1",
     "chokidar": "^3.4.2",
     "chokidar-cli": "^2.1.0",
