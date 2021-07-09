@@ -18,8 +18,11 @@
     id="how"
     value={`
       1. Click Yeoul to start the game.
+
       2. In the room marked with arrows, please find something different from the other room.
+
       3. If you find everything in time, it's GAMECLEAR!
+      
       4. GAMEOVER if time runs out or your life runs out!`}
     ineHeight=15
     position="14.676 3.091 5"
