@@ -8,9 +8,20 @@
   import { default as UIComponent } from "../entities/UI/index.svelte";
   export const fileName = "Normal";
 </script>
-<script src="https://unpkg.com/aframe-extras@6.0.1/dist/aframe-extras.min.js"></script>
 <svelte:head>
   <script>
+    AFRAME.registerComponent('thumbstick-logging',{
+      init: function () {
+        this.el.addEventListener('thumbstickmoved', this.logThumbstick);
+      },
+      logThumbstick: function (evt) {
+        const camera = document.querySelector('#camera');
+        if (evt.detail.y > 0.95) { camera.object3D.position.z += 1; }
+        if (evt.detail.y < -0.95) { camera.object3D.position.z -= 1; }
+        if (evt.detail.x < -0.95) { camera.object3D.position.x -= 1;}
+        if (evt.detail.x > 0.95) { camera.object3D.position.x += 1; }
+      }
+    });
     AFRAME.registerComponent("cursor-listener", {
       init: function () {
         // 환경배치
@@ -99,7 +110,7 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity id="rig" movement-controls>
+  <!-- <a-entity id="rig" movement-controls>
     <a-entity camera position="0 1.6 0" look-controls>
       <a-entity
       cursor="fuse: true; fuseTimeout: 500"
@@ -112,10 +123,12 @@
     
     <a-entity hand-controls="left"></a-entity>
     <a-entity hand-controls="right"></a-entity>
-  </a-entity>
+  </a-entity> -->
 
-
-  <!-- <a-entity
+  <a-entity oculus-touch-controls="hand: left" thumbstick-logging/>
+  <a-entity oculus-touch-controls="hand: right" thumbstick-logging/>
+  <a-entity
+   id="camera"
     camera
     look-controls="pointerLockEnabled: true;"
     wasd-controls
@@ -128,7 +141,7 @@
     material="color: #fff; shader: flat; opacity: .8"
   />
     <UIComponent />
-  </a-entity> -->
+  </a-entity>
   <GameObject Normal={true} />
   <RoomTest />
 </a-scene>
