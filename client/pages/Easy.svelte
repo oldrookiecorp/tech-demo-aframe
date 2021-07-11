@@ -47,24 +47,24 @@
           }
           //문개방
           const door = document.querySelectorAll(".door");
-            const countdown = document.querySelector("#countdown");
+          const countdown = document.querySelector("#countdown");
 
-            let count=10;
-            const countInterval = setInterval(function(){
-              if(count === 0){
-                clearInterval(countInterval);
-                countdown.remove();
-              }
-              countdown.setAttribute("value",count);
-              count--;
-            }, 1000);
+          let count = 10;
+          const countInterval = setInterval(function () {
+            if (count === 0) {
+              clearInterval(countInterval);
+              countdown.remove();
+            }
+            countdown.setAttribute("value", count);
+            count--;
+          }, 1000);
 
-            setTimeout(function(){
-              for(let i=0; i<door.length; i++){
-                door[i].remove();
-                AFRAME.scenes[0].emit("startGame");
-              }
-            },11000);
+          setTimeout(function () {
+            for (let i = 0; i < door.length; i++) {
+              door[i].remove();
+              AFRAME.scenes[0].emit("startGame");
+            }
+          }, 11000);
         });
       },
     });
@@ -81,6 +81,12 @@
   ui
   vr-mode-ui
   inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+  keyboard-shortcuts
+  screenshot
+  device-orientation-permission-ui
+  raycaster
+  cursor
+  webxr
 >
   <UIAssets />
 
@@ -98,7 +104,7 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls></a-entity>
+  <a-entity oculus-go-controls />
 
   <a-entity laser-controls="hand: left" />
   <a-entity laser-controls="hand: right" />
