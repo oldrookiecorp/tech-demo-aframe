@@ -81,12 +81,6 @@
   ui
   vr-mode-ui
   inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
-  keyboard-shortcuts
-  screenshot
-  device-orientation-permission-ui
-  raycaster
-  cursor
-  webxr
 >
   <UIAssets />
 
