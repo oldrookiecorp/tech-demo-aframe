@@ -81,6 +81,12 @@
   ui
   vr-mode-ui
   inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+  keyboard-shortcuts
+  screenshot
+  device-orientation-permission-ui
+  raycaster
+  cursor
+  webxr
 >
   <UIAssets />
 
@@ -98,10 +104,10 @@
     light="type:  point;  intensity:0.4 castShadow: true;"
     position="4.818 1.417 12.585"
   />
-  <a-entity oculus-go-controls />
+  <!-- <a-entity oculus-go-controls />
 
   <a-entity laser-controls="hand: left" />
-  <a-entity laser-controls="hand: right" />
+  <a-entity laser-controls="hand: right" /> -->
   <a-entity
     camera
     look-controls="pointerLockEnabled: true;"
